@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>GEOJIT - Online Share Trading India - Equity, Stock Broking, Mutual Funds - India's leading retail financial services company</title>
+          <meta name="description" content= "Online share trading in India - Geojit is India's leading retail financial services company, providing online share trading, equity, investment platform, mutual funds, portfolio management services, livestock market, and more. ">
+          <meta name="keywords" content="Best Online Share Trading India, online trading platform, stock broking company in India" />
+          <link href="images/geojiticon.ico" rel="icon" type="image/x-icon" />
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+          <link href="bootstrap/css/bootstrap.4.6.2.min.css" rel="stylesheet">
+          <script src="bootstrap/js/jquery.slim.min.js"></script>
+          <script src="bootstrap/js/popper.min.js"></script>
+          <script src="bootstrap/js/bootstrap.min.js"></script>
+          <style>
+               body, html {
+                    font: 400 16px/24px "Open Sans", sans-serif;;
+                    font-optical-sizing: auto;
+                    min-width: 320px;
+                    color: #4C4C4C;
+                    background: #ffffff;
+                    padding: 10px 0px;
+               }
+               @media only screen and (max-width: 768px) {
+                    body, html {
+                         font: 400 14px/22px "Open Sans", sans-serif;;
+                         min-width: 100%;
+                         color: #4C4C4C;
+                    }
+               }
+               .outer-container {
+                    padding: 20px;
+               }
+               .container {
+                    background-color: #F1FDFC;
+                    border-radius: 12px;
+                    border: 1px solid #3E877C;
+               }
+               .header {
+                    height: 60px;
+                    margin: 30px 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+               }
+               @media only screen and (max-width: 768px) {
+                    .header {
+                         height: 24px;
+                         margin: 20px 0px;
+                    }
+               }
+               .header img {
+                    height: 100%;
+               }
+               .header .link {
+                    text-decoration: none;
+                    color: #4C4C4C;
+                    transition: all ease 0.6s;
+               }
+               .header .link:hover {
+                    text-decoration: none;
+                    color: #3E877C;
+                    transition: all ease 0.6s;
+               }
+               .title {
+                    font-size: 26px;
+                    font-weight: 600;
+                    line-height: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-bottom: 16px;
+               }
+               .description {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+               }
+               @media only screen and (max-width: 768px) {
+                    .title {
+                         font-size: 18px;
+                         line-height: 24px;
+                         margin-bottom: 10px;
+                    }
+                    .description {
+                         font-size: 14px;
+                    }
+               }
+               .survey-form {
+                    width: 100%;
+               }
+               ol {
+                    padding-left: 0px;
+               }
+               li > * {
+                    vertical-align: text-top;
+               }
+               ol > li::marker {
+                    font-weight: 600;
+               }
+               ol li label {
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    margin-bottom: 14px;
+               }
+               ol li {
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    padding-left: 16px;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
+               }
+               @media only screen and (max-width: 768px) {
+                    ol li, ol li label {
+                         font-size: 14px;
+                         line-height: 18px;
+                         color: #4c4c4c;
+                         font-weight: 400;
+                         margin-bottom: 14px;
+                    }
+                    ol li {
+                         padding-left: 12px;
+                    }
+               }
+               .labelstrong {
+                    font-weight: 600;
+               }
+               ol li .sublabel {
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 400;
+               }
+               ol li p {
+                    margin-bottom: 0px;
+               }
+               .formGroup {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+               }
+               @media only screen and (max-width: 1200px) {
+                    .formGroup {
+                         flex-direction: column;
+                         justify-content: flex-start;
+                         align-items: flex-start;
+                    }
+               }
+               [type="radio"]:checked, [type="radio"]:not(:checked) {
+                    position: absolute;
+                    left: -9999px;
+               }
+               [type="radio"]:checked + label, [type="radio"]:not(:checked) + label {
+                    position: relative;
+                    padding-left: 28px;
+                    cursor: pointer;
+                    line-height: 20px;
+                    display: inline-block;
+                    color: #4c4c4c;
+                    margin-right: 30px;
+               }
+               [type="radio"]:checked + label:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid #3E877C;
+                    border-radius: 100%;
+                    background: #fff;
+               }
+               [type="radio"]:not(:checked) + label:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid #d7d7d7;
+                    border-radius: 100%;
+                    background: #fff;
+               }
+               [type="radio"]:checked + label:after, [type="radio"]:not(:checked) + label:after {
+                    content: '';
+                    width: 14px;
+                    height: 14px;
+                    background: #3E877C;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    border-radius: 100%;
+                    -webkit-transition: all 0.2s ease;
+                    transition: all 0.2s ease;
+               }
+               [type="radio"]:not(:checked) + label:after {
+                    opacity: 0;
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+               }
+               [type="radio"]:checked + label:after {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+               }
+               .rating {
+                    max-width: 330px;
+                    width: 328px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 36px;
+                    font-size: 16px;
+                    border-right: 1px solid #D7D7D7;
+               }
+               .rating span {
+                    border: 1px solid #D7D7D7;
+                    border-right: none;
+                    width: 66px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+               }
+               .ratingspandefault {
+                    color: #4C4C4C;
+                    background-color: transparent;
+               }
+               .ratingspanselected {
+                    color: #ffffff;
+                    background-color: #3E877C;
+               }
+               .ratingfooter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    max-width: 328px;
+                    margin-bottom: 30px;
+                    font-size: 12px;
+               }
+               .ratingfooter span {
+                    width: 100px;
+               }
+               @media only screen and (max-width: 768px) {
+                    .rating {
+                         width: 100%;
+                    }
+               }
+               .ratingexperience {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 328px;
+               }
+               .ratingexperience span {
+                    width: 66px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+               }
+               .ratingExperienceFooter {
+                    display: inline-block;
+                    max-width: 328px;
+                    font-size: 12px;
+                    width: 100%;
+                    position: relative;
+                    margin-top:5px;
+               }
+               .ratingExperienceFooter span {
+                    display: inline-block;
+                    position: absolute;
+               }
+               @media only screen and (max-width: 450px) {
+                    .ratingExperienceFooter {
+                         width: 100%;
+                    }
+                    .ratingExperienceFooter span {
+                         width: 100%;
+                         text-align: center !important;
+                         position: relative;
+                         left: 0px !important
+                    }
+               }
+               @media only screen and (max-width: 768px) {
+                    .ratingexperience {
+                         width: 100%;
+                    }
+                    .ratingexperience img {
+                         width: 90%;
+                    }
+               }
+               .verysatisfied_disabled {
+                    background-image: url("images/very_satisfied_disabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .verysatisfied_enabled {
+                    background-image: url("images/very_satisfied_enabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .somewhat_satisfied_disabled {
+                    background-image: url("images/somewhat_satisfied_disabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .somewhat_satisfied_enabled {
+                    background-image: url("images/somewhat_satisfied_enabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .neutral_disabled {
+                    background-image: url("images/neutral_disabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .neutral_enabled {
+                    background-image: url("images/neutral_enabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .somewhat_dissatisfied_disabled {
+                    background-image: url("images/somewhat_dissatisfied_disabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .somewhat_dissatisfied_enabled {
+                    background-image: url("images/somewhat_dissatisfiedenabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .very_dissatisfied_disabled {
+                    background-image: url("images/very_dissatisfied_disabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .very_dissatisfied_enabled {
+                    background-image: url("images/very_dissatisfied_enabled.png");
+                    width:36px;
+                    height:35px;
+                    background-repeat:no-repeat;
+                    transition: all ease 0.6s;
+               }
+               .button-container {
+                    display: flex;
+                    padding: 20px;
+                    align-items: center;
+                    justify-content: center;
+               }
+               .btn.btn-primary {
+                    background-color: #f5cf47 !important;
+                    font-size: .875rem;
+                    padding: 0.5rem 1.5rem !important;
+                    border: 2px solid #f5cf47 !important;
+                    color: #3c3c3c !important;
+                    outline: 0;
+               }
+          </style>
+     </head>
+     <body>
+          <div class="outer-container">
+               <div class="container">
+                    <div class="header">
+                         <a href="https://www.geojit.com/" target="_blank" class="link">www.geojit.com</a>
+                         <img src="images/logo.png" alt="Geojit - Online Share Trading India" title="Geojit - Online Share Trading India">
+                    </div>
+                    <div class="title">
+                         <span>Dear Raghav</span>
+                         <span>Annual Survey 2025</span>
+                    </div>
+                    <div class="description">
+                         Tell us how we can further meet your expectations to serve you better?
+                    </div>
+                    <form class="survey-form"  id="survey" name="survey">
+                         <ol id="survey_list" class="survey_list parentol">
+                              <li id="age_group_container">
+                                   <label class="labelstrong">Age Group:</label>
+                                   <div class="formGroup">
+                                        <p>
+                                             <input type="radio" id="age_group1" name="age_group" value="18-24">
+                                             <label for="age_group1" class="sublabel"> 18-24</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="age_group2" name="age_group" value="25-34">
+                                             <label for="age_group2" class="sublabel"> 25-34</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="age_group3" name="age_group" value="35-44">
+                                             <label for="age_group3" class="sublabel"> 35-44</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="age_group4" name="age_group" value="45-54">
+                                             <label for="age_group4" class="sublabel"> 45-54</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="age_group5" name="age_group" value="55+">
+                                             <label for="age_group5" class="sublabel"> 55+</label>
+                                        </p>
+                                   </div>
+                              </li>
+                              <li id="satisfied_with_product_and_services_container">
+                                   <label class="labelstrong">Overall, how satisfied are you with our products/services?</label>
+                                   <div class="formGroup">
+                                        <p>
+                                             <input type="radio" id="satisfied_with_product_and_services1" name="satisfied_with_product_and_services" value="Very Satisfied">
+                                             <label for="satisfied_with_product_and_services1" class="sublabel"> Very Satisfied</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="satisfied_with_product_and_services2" name="satisfied_with_product_and_services" value="Satisfied">
+                                             <label for="satisfied_with_product_and_services2" class="sublabel"> Satisfied</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="satisfied_with_product_and_services3" name="satisfied_with_product_and_services" value="Neutral">
+                                             <label for="satisfied_with_product_and_services3" class="sublabel"> Neutral</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="satisfied_with_product_and_services4" name="satisfied_with_product_and_services" value="Dissatisfied">
+                                             <label for="satisfied_with_product_and_services4" class="sublabel"> Dissatisfied</label>
+                                        </p>
+                                        <p>
+                                             <input type="radio" id="satisfied_with_product_and_services5" name="satisfied_with_product_and_services" value="Very Dissatisfied">
+                                             <label for="satisfied_with_product_and_services5" class="sublabel"> Very Dissatisfied</label>
+                                        </p>
+                                   </div>
+                              </li>
+                              <li id="statements_that_describe_geojit_container">
+                                   <label class="labelstrong">Given below are a set of statements that describe Geojit. To what extent do you agree and disagree?</label>
+                                   <ol type="a">
+                                        <li>
+                                             <label class="labelstrong">Geojit is a reputed brand</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_reputed_brand1" name="geojit_is_a_reputed_brand" value="Completely Agree">
+                                                       <label for="geojit_is_a_reputed_brand1" class="sublabel"> Completely Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_reputed_brand2" name="geojit_is_a_reputed_brand" value="Somewhat Agree">
+                                                       <label for="geojit_is_a_reputed_brand2" class="sublabel"> Somewhat Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_reputed_brand3" name="geojit_is_a_reputed_brand" value="Neutral">
+                                                       <label for="geojit_is_a_reputed_brand3" class="sublabel"> Neutral</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_reputed_brand4" name="geojit_is_a_reputed_brand" value="Somewhat Disagree">
+                                                       <label for="geojit_is_a_reputed_brand4" class="sublabel"> Somewhat Disagree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_reputed_brand5" name="geojit_is_a_reputed_brand" value="Completely Disagree">
+                                                       <label for="geojit_is_a_reputed_brand5" class="sublabel"> Completely Disagree</label>
+                                                  </p>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Geojit is your trusted investment services partner</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_trusted_investment_service_partner1" name="geojit_is_a_trusted_investment_service_partner" value="Completely Agree">
+                                                       <label for="geojit_is_a_trusted_investment_service_partner1" class="sublabel"> Completely Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_trusted_investment_service_partner2" name="geojit_is_a_trusted_investment_service_partner" value="Somewhat Agree">
+                                                       <label for="geojit_is_a_trusted_investment_service_partner2" class="sublabel"> Somewhat Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_trusted_investment_service_partner3" name="geojit_is_a_trusted_investment_service_partner" value="Neutral">
+                                                       <label for="geojit_is_a_trusted_investment_service_partner3" class="sublabel"> Neutral</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_trusted_investment_service_partner4" name="geojit_is_a_trusted_investment_service_partner" value="Somewhat Disagree">
+                                                       <label for="geojit_is_a_trusted_investment_service_partner4" class="sublabel"> Somewhat Disagree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_is_a_trusted_investment_service_partner5" name="geojit_is_a_trusted_investment_service_partner" value="Completely Disagree">
+                                                       <label for="geojit_is_a_trusted_investment_service_partner5" class="sublabel"> Completely Disagree</label>
+                                                  </p>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Geojit product offerings help me meet my financial goals</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="radio" id="geojit_product_offerings_help_meet_my_financial_goals1" name="geojit_product_offerings_help_meet_my_financial_goals" value="Completely Agree">
+                                                       <label for="geojit_product_offerings_help_meet_my_financial_goals1" class="sublabel"> Completely Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_product_offerings_help_meet_my_financial_goals2" name="geojit_product_offerings_help_meet_my_financial_goals" value="Somewhat Agree">
+                                                       <label for="geojit_product_offerings_help_meet_my_financial_goals2" class="sublabel"> Somewhat Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_product_offerings_help_meet_my_financial_goals3" name="geojit_product_offerings_help_meet_my_financial_goals" value="Neutral">
+                                                       <label for="geojit_product_offerings_help_meet_my_financial_goals3" class="sublabel"> Neutral</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_product_offerings_help_meet_my_financial_goals4" name="geojit_product_offerings_help_meet_my_financial_goals" value="Somewhat Disagree">
+                                                       <label for="geojit_product_offerings_help_meet_my_financial_goals4" class="sublabel"> Somewhat Disagree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_product_offerings_help_meet_my_financial_goals5" name="geojit_product_offerings_help_meet_my_financial_goals" value="Completely Disagree">
+                                                       <label for="geojit_product_offerings_help_meet_my_financial_goals5" class="sublabel"> Completely Disagree</label>
+                                                  </p>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Geojit has extensive branch network</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="radio" id="geojit_has_extensive_branch_network1" name="geojit_has_extensive_branch_network" value="Completely Agree">
+                                                       <label for="geojit_has_extensive_branch_network1" class="sublabel"> Completely Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_has_extensive_branch_network2" name="geojit_has_extensive_branch_network" value="Somewhat Agree">
+                                                       <label for="geojit_has_extensive_branch_network2" class="sublabel"> Somewhat Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_has_extensive_branch_network3" name="geojit_has_extensive_branch_network" value="Neutral">
+                                                       <label for="geojit_has_extensive_branch_network3" class="sublabel"> Neutral</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_has_extensive_branch_network4" name="geojit_has_extensive_branch_network" value="Somewhat Disagree">
+                                                       <label for="geojit_has_extensive_branch_network4" class="sublabel"> Somewhat Disagree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_has_extensive_branch_network5" name="geojit_has_extensive_branch_network" value="Completely Disagree">
+                                                       <label for="geojit_has_extensive_branch_network5" class="sublabel"> Completely Disagree</label>
+                                                  </p>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Geojit conducts business in a socially responsible manner</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="radio" id="geojit_conducts_business_in_a_socially_responsible_manner1" name="geojit_conducts_business_in_a_socially_responsible_manner" value="Completely Agree">
+                                                       <label for="geojit_conducts_business_in_a_socially_responsible_manner1" class="sublabel"> Completely Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_conducts_business_in_a_socially_responsible_manner2" name="geojit_conducts_business_in_a_socially_responsible_manner" value="Somewhat Agree">
+                                                       <label for="geojit_conducts_business_in_a_socially_responsible_manner2" class="sublabel"> Somewhat Agree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_conducts_business_in_a_socially_responsible_manner3" name="geojit_conducts_business_in_a_socially_responsible_manner" value="Neutral">
+                                                       <label for="geojit_conducts_business_in_a_socially_responsible_manner3" class="sublabel"> Neutral</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_conducts_business_in_a_socially_responsible_manner4" name="geojit_conducts_business_in_a_socially_responsible_manner" value="Somewhat Disagree">
+                                                       <label for="geojit_conducts_business_in_a_socially_responsible_manner4" class="sublabel"> Somewhat Disagree</label>
+                                                  </p>
+                                                  <p>
+                                                       <input type="radio" id="geojit_conducts_business_in_a_socially_responsible_manner5" name="geojit_conducts_business_in_a_socially_responsible_manner" value="Completely Disagree">
+                                                       <label for="geojit_conducts_business_in_a_socially_responsible_manner5" class="sublabel"> Completely Disagree</label>
+                                                  </p>
+                                             </div>
+                                        </li>
+                                   </ol>
+                              </li>
+                              <li id="recommend_geojit_to_a_friend_container">
+                                   <label class="labelstrong">How likely are you to recommend Geojit to a friend or colleague?</label>
+                                   <div class="formGroup">
+                                        <p>
+                                             <input type="hidden" id="recommend_geojit_to_a_friend" name="recommend_geojit_to_a_friend" value="">
+                                             <div class="rating" id="recommend_geojit_to_a_friend_parent">
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend1', '1')" id="recommend_geojit_to_a_friend1" class="ratingspandefault">1</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend2', '2')" id="recommend_geojit_to_a_friend2" class="ratingspandefault">2</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend3', '3')" id="recommend_geojit_to_a_friend3" class="ratingspandefault">3</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend4', '4')" id="recommend_geojit_to_a_friend4" class="ratingspandefault">4</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend5', '5')" id="recommend_geojit_to_a_friend5" class="ratingspandefault">5</span>
+                                             </div>
+                                        </p>
+                                   </div>
+                                   <div class="ratingfooter">
+                                        <span>Not at all likely</span>
+                                        <span class="text-right">Extremely likely</span>
+                                   </div>
+                              </li>
+                              <li id="service_experience_container">
+                                   <label class="labelstrong">Rate your service experience <em>(Rate only the services applicable to you)</em></label>
+                                   <ol type="a">
+                                        <li>
+                                             <label class="labelstrong">Onboarding Experience</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="onboarding_experience" name="onboarding_experience" value="">
+                                                       <div class="rating" id="onboarding_experience_parent">
+                                                            <span onclick="selectRating('onboarding_experience','onboarding_experience1', '1')" id="onboarding_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('onboarding_experience','onboarding_experience2', '2')" id="onboarding_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('onboarding_experience','onboarding_experience3', '3')" id="onboarding_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('onboarding_experience','onboarding_experience4', '4')" id="onboarding_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('onboarding_experience','onboarding_experience5', '5')" id="onboarding_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Branch Service</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="branch_service_experience" name="branch_service_experience" value="">
+                                                       <div class="rating" id="branch_service_experience_parent">
+                                                            <span onclick="selectRating('branch_service_experience','branch_service_experience1', '1')" id="branch_service_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('branch_service_experience','branch_service_experience2', '2')" id="branch_service_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('branch_service_experience','branch_service_experience3', '3')" id="branch_service_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('branch_service_experience','branch_service_experience4', '4')" id="branch_service_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('branch_service_experience','branch_service_experience5', '5')" id="branch_service_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Customer Service at HO</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="customer_service_at_HO_experience" name="customer_service_at_HO_experience" value="">
+                                                       <div class="rating" id="customer_service_at_HO_experience_parent">
+                                                            <span onclick="selectRating('customer_service_at_HO_experience','customer_service_at_HO_experience1', '1')" id="customer_service_at_HO_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('customer_service_at_HO_experience','customer_service_at_HO_experience2', '2')" id="customer_service_at_HO_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('customer_service_at_HO_experience','customer_service_at_HO_experience3', '3')" id="customer_service_at_HO_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('customer_service_at_HO_experience','customer_service_at_HO_experience4', '4')" id="customer_service_at_HO_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('customer_service_at_HO_experience','customer_service_at_HO_experience5', '5')" id="customer_service_at_HO_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Fundamental Research Recommendations</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="fundamental_research_recommendations_experience" name="fundamental_research_recommendations_experience" value="">
+                                                       <div class="rating" id="fundamental_research_recommendations_experience_parent">
+                                                            <span onclick="selectRating('fundamental_research_recommendations_experience','fundamental_research_recommendations_experience1', '1')" id="fundamental_research_recommendations_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('fundamental_research_recommendations_experience','fundamental_research_recommendations_experience2', '2')" id="fundamental_research_recommendations_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('fundamental_research_recommendations_experience','fundamental_research_recommendations_experience3', '3')" id="fundamental_research_recommendations_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('fundamental_research_recommendations_experience','fundamental_research_recommendations_experience4', '4')" id="fundamental_research_recommendations_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('fundamental_research_recommendations_experience','fundamental_research_recommendations_experience5', '5')" id="fundamental_research_recommendations_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Technical Research Recommendations</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="technical_research_recommendations_experience" name="technical_research_recommendations_experience" value="">
+                                                       <div class="rating" id="technical_research_recommendations_experience_parent">
+                                                            <span onclick="selectRating('technical_research_recommendations_experience','technical_research_recommendations_experience1', '1')" id="technical_research_recommendations_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('technical_research_recommendations_experience','technical_research_recommendations_experience2', '2')" id="technical_research_recommendations_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('technical_research_recommendations_experience','technical_research_recommendations_experience3', '3')" id="technical_research_recommendations_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('technical_research_recommendations_experience','technical_research_recommendations_experience4', '4')" id="technical_research_recommendations_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('technical_research_recommendations_experience','technical_research_recommendations_experience5', '5')" id="technical_research_recommendations_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Commodity Research Recommendations</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="commodity_research_recommendations_experience" name="commodity_research_recommendations_experience" value="">
+                                                       <div class="rating" id="commodity_research_recommendations_experience_parent">
+                                                            <span onclick="selectRating('commodity_research_recommendations_experience','commodity_research_recommendations_experience1', '1')" id="commodity_research_recommendations_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('commodity_research_recommendations_experience','commodity_research_recommendations_experience2', '2')" id="commodity_research_recommendations_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('commodity_research_recommendations_experience','commodity_research_recommendations_experience3', '3')" id="commodity_research_recommendations_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('commodity_research_recommendations_experience','commodity_research_recommendations_experience4', '4')" id="commodity_research_recommendations_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('commodity_research_recommendations_experience','commodity_research_recommendations_experience5', '5')" id="commodity_research_recommendations_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Smartfolio Recommendations</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="smartfolio_recommendations_experience" name="smartfolio_recommendations_experience" value="">
+                                                       <div class="rating" id="smartfolio_recommendations_experience_parent">
+                                                            <span onclick="selectRating('smartfolio_recommendations_experience','smartfolio_recommendations_experience1', '1')" id="smartfolio_recommendations_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('smartfolio_recommendations_experience','smartfolio_recommendations_experience2', '2')" id="smartfolio_recommendations_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('smartfolio_recommendations_experience','smartfolio_recommendations_experience3', '3')" id="smartfolio_recommendations_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('smartfolio_recommendations_experience','smartfolio_recommendations_experience4', '4')" id="smartfolio_recommendations_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('smartfolio_recommendations_experience','smartfolio_recommendations_experience5', '5')" id="smartfolio_recommendations_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">Mutual Fund Recommendations</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="mutual_fund_recommendations_experience" name="mutual_fund_recommendations_experience" value="">
+                                                       <div class="rating" id="mutual_fund_recommendations_experience_parent">
+                                                            <span onclick="selectRating('mutual_fund_recommendations_experience','mutual_fund_recommendations_experience1', '1')" id="mutual_fund_recommendations_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('mutual_fund_recommendations_experience','mutual_fund_recommendations_experience2', '2')" id="mutual_fund_recommendations_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('mutual_fund_recommendations_experience','mutual_fund_recommendations_experience3', '3')" id="mutual_fund_recommendations_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('mutual_fund_recommendations_experience','mutual_fund_recommendations_experience4', '4')" id="mutual_fund_recommendations_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('mutual_fund_recommendations_experience','mutual_fund_recommendations_experience5', '5')" id="mutual_fund_recommendations_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <label class="labelstrong">PMS</label>
+                                             <div class="formGroup">
+                                                  <p>
+                                                       <input type="hidden" id="pms_experience" name="pms_experience" value="">
+                                                       <div class="rating" id="pms_experience_parent">
+                                                            <span onclick="selectRating('pms_experience','pms_experience1', '1')" id="pms_experience1" class="ratingspandefault">1</span>
+                                                            <span onclick="selectRating('pms_experience','pms_experience2', '2')" id="pms_experience2" class="ratingspandefault">2</span>
+                                                            <span onclick="selectRating('pms_experience','pms_experience3', '3')" id="pms_experience3" class="ratingspandefault">3</span>
+                                                            <span onclick="selectRating('pms_experience','pms_experience4', '4')" id="pms_experience4" class="ratingspandefault">4</span>
+                                                            <span onclick="selectRating('pms_experience','pms_experience5', '5')" id="pms_experience5" class="ratingspandefault">5</span>
+                                                       </div>
+                                                  </p>
+                                             </div>
+                                             <div class="ratingfooter">
+                                                  <span>Very Dissatisfied</span>
+                                                  <span class="text-right">Satisfied</span>
+                                             </div>
+                                        </li>
+                                   </ol>
+                              </li>
+                              <li id="comments">
+                                   <label class="labelstrong">Please share your thoughts on how we can improve your experience</label>
+                                   <div class="formGroup">
+                                        <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+                                   </div>
+                              </li>
+                         </ol>
+                         <div class="button-container">
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </body>
+     <script>
+          function selectRating(formField, selectedItem, value) {
+               const parentDiv = document.getElementById(formField+'_parent');
+               const childSpans = parentDiv.querySelectorAll("span");
+               var element = document.getElementById(selectedItem);
+               if (element.classList.contains("ratingspandefault")) {
+                    element.classList.remove("ratingspandefault");
+                    element.classList.add("ratingspanselected");
+                    document.getElementById(formField).value = value;
+               } else {
+                    element.classList.remove("ratingspanselected");
+                    element.classList.add("ratingspandefault");
+                    document.getElementById(formField).value = '';
+               }
+               childSpans.forEach((e) => {
+                    if(e.id != selectedItem) {
+                         e.classList.remove("ratingspanselected");
+                         e.classList.add("ratingspandefault");
+                    } 
+               });
+               if(
+                    formField == 'fundamental_research_recommendations_experience' || formField == 'technical_research_recommendations_experience'  || formField == 'commodity_research_recommendations_experience' || formField == 'smartfolio_recommendations_experience' || formField == 'mutual_fund_recommendations_experience'
+               ) {
+                    setExperienceSubItems(formField);
+               }
+               
+          }
+          function setExperienceSubItems(formField) {
+               const survey_ui = document.querySelector('#survey_list');
+               if((document.getElementById('fundamental_research_recommendations_experience').value && document.getElementById('fundamental_research_recommendations_experience').value != '') || (document.getElementById('technical_research_recommendations_experience').value && document.getElementById('technical_research_recommendations_experience').value != '') || (document.getElementById('commodity_research_recommendations_experience').value && document.getElementById('commodity_research_recommendations_experience').value != '') ) {
+                    if(!document.getElementById('flip_mobile_experience_container')) {
+                         const li = document.createElement("li");
+                         li.setAttribute("id", "flip_mobile_experience_container");
+                         li.innerHTML  = `
+                              <label class="labelstrong">Rate your experience on our FLIP mobile application</label>
+                              <ol type="a" id="flip_mobile_experience">
+                                   <li>
+                                        <label class="labelstrong">Ease of Use</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_ease_of_use" name="flip_mobile_experience_ease_of_use" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_ease_of_use_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use1', 'Very Satisfied')" id="flip_mobile_experience_ease_of_use1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use2', 'Somewhat Satisfied')" id="flip_mobile_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use3', 'Neutral')" id="flip_mobile_experience_ease_of_use3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use5', 'Very Dissatisfied')" id="flip_mobile_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Functionality</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_functionality" name="flip_mobile_experience_functionality" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_functionality_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality1', 'Very Satisfied')" id="flip_mobile_experience_functionality1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality2', 'Somewhat Satisfied')" id="flip_mobile_experience_functionality2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality3', 'Neutral')" id="flip_mobile_experience_functionality3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality5', 'Very Dissatisfied')" id="flip_mobile_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Performance</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_performance" name="flip_mobile_experience_performance" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_performance_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance1', 'Very Satisfied')" id="flip_mobile_experience_performance1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance2', 'Somewhat Satisfied')" id="flip_mobile_experience_performance2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance3', 'Neutral')" id="flip_mobile_experience_performance3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance5', 'Very Dissatisfied')" id="flip_mobile_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Design and Aesthetics</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_design_and_aesthetics" name="flip_mobile_experience_design_and_aesthetics" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_design_and_aesthetics_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics1', 'Very Satisfied')" id="flip_mobile_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="flip_mobile_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics3', 'Neutral')" id="flip_mobile_experience_design_and_aesthetics3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="flip_mobile_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Security</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_security" name="flip_mobile_experience_security" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_security_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security1', 'Very Satisfied')" id="flip_mobile_experience_security1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security2', 'Somewhat Satisfied')" id="flip_mobile_experience_security2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security3', 'Neutral')" id="flip_mobile_experience_security3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_security4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security5', 'Very Dissatisfied')" id="flip_mobile_experience_security5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Push Notifications</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_push_notifications" name="flip_mobile_experience_push_notifications" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_push_notifications_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications1', 'Very Satisfied')" id="flip_mobile_experience_push_notifications1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications2', 'Somewhat Satisfied')" id="flip_mobile_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications3', 'Neutral')" id="flip_mobile_experience_push_notifications3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications5', 'Very Dissatisfied')" id="flip_mobile_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">App Speed</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="flip_mobile_experience_app_speed" name="flip_mobile_experience_app_speed" value="">
+                                                  <div class="ratingexperience" id="flip_mobile_experience_app_speed_parent">
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed1', 'Very Satisfied')" id="flip_mobile_experience_app_speed1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed2', 'Somewhat Satisfied')" id="flip_mobile_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed3', 'Neutral')" id="flip_mobile_experience_app_speed3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed5', 'Very Dissatisfied')" id="flip_mobile_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                              </ol>
+                         `;
+                         survey_ui.insertBefore(li, survey_ui.children[5]);
+                    }
+               } else {
+                    var item = document.getElementById('flip_mobile_experience_container');
+                    if (item) {
+                         survey_ui.removeChild(item);
+                    }
+               }
+               if( (document.getElementById('technical_research_recommendations_experience').value && document.getElementById('technical_research_recommendations_experience').value != '')) {
+                    if(!document.getElementById('traderx_container')) {
+                         const li = document.createElement("li");
+                         li.setAttribute("id", "traderx_container");
+                         li.innerHTML  = `
+                              <label class="labelstrong">Rate your experience on our TraderX application</label>
+                              <ol type="a" id="traderx_experience">
+                                   <li>
+                                        <label class="labelstrong">Ease of Use</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_ease_of_use" name="traderx_experience_ease_of_use" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_ease_of_use_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use1', 'Very Satisfied')" id="traderx_experience_ease_of_use1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use2', 'Somewhat Satisfied')" id="traderx_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use3', 'Neutral')" id="traderx_experience_ease_of_use3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="traderx_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use5', 'Very Dissatisfied')" id="traderx_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Functionality</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_functionality" name="traderx_experience_functionality" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_functionality_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality1', 'Very Satisfied')" id="traderx_experience_functionality1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality2', 'Somewhat Satisfied')" id="traderx_experience_functionality2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality3', 'Neutral')" id="traderx_experience_functionality3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality4', 'Somewhat Dissatisfied')" id="traderx_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality5', 'Very Dissatisfied')" id="traderx_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Performance</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_performance" name="traderx_experience_performance" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_performance_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance1', 'Very Satisfied')" id="traderx_experience_performance1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance2', 'Somewhat Satisfied')" id="traderx_experience_performance2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance3', 'Neutral')" id="traderx_experience_performance3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance4', 'Somewhat Dissatisfied')" id="traderx_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance5', 'Very Dissatisfied')" id="traderx_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Design and Aesthetics</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_design_and_aesthetics" name="traderx_experience_design_and_aesthetics" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_design_and_aesthetics_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics1', 'Very Satisfied')" id="traderx_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="traderx_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics3', 'Neutral')" id="traderx_experience_design_and_aesthetics3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="traderx_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="traderx_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Security</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_security" name="traderx_experience_security" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_security_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security1', 'Very Satisfied')" id="traderx_experience_security1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security2', 'Somewhat Satisfied')" id="traderx_experience_security2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security3', 'Neutral')" id="traderx_experience_security3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security4', 'Somewhat Dissatisfied')" id="traderx_experience_security4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security5', 'Very Dissatisfied')" id="traderx_experience_security5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Push Notifications</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_push_notifications" name="traderx_experience_push_notifications" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_push_notifications_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications1', 'Very Satisfied')" id="traderx_experience_push_notifications1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications2', 'Somewhat Satisfied')" id="traderx_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications3', 'Neutral')" id="traderx_experience_push_notifications3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications4', 'Somewhat Dissatisfied')" id="traderx_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications5', 'Very Dissatisfied')" id="traderx_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">App Speed</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="traderx_experience_app_speed" name="traderx_experience_app_speed" value="">
+                                                  <div class="ratingexperience" id="traderx_experience_app_speed_parent">
+                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed1', 'Very Satisfied')" id="traderx_experience_app_speed1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed2', 'Somewhat Satisfied')" id="traderx_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed3', 'Neutral')" id="traderx_experience_app_speed3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed4', 'Somewhat Dissatisfied')" id="traderx_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed5', 'Very Dissatisfied')" id="traderx_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                              </ol>
+                         `;
+                         survey_ui.insertBefore(li, survey_ui.children[6]);
+                    }
+               } else {
+                    var item1 = document.getElementById('traderx_container');
+                    if (item1) {
+                         survey_ui.removeChild(item1);
+                    } 
+               }
+               if( (document.getElementById('smartfolio_recommendations_experience').value && document.getElementById('smartfolio_recommendations_experience').value != '')) {
+                    if(!document.getElementById('smartfolio_container')) {
+                         const li = document.createElement("li");
+                         li.setAttribute("id", "smartfolio_container");
+                         li.innerHTML  = `
+                              <label class="labelstrong">Rate your experience on our Smartfolio mobile application</label>
+                              <ol type="a" id="smartfolio_experience">
+                                   <li>
+                                        <label class="labelstrong">Ease of Use</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_ease_of_use" name="smartfolio_experience_ease_of_use" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_ease_of_use_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use1', 'Very Satisfied')" id="smartfolio_experience_ease_of_use1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use2', 'Somewhat Satisfied')" id="smartfolio_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use3', 'Neutral')" id="smartfolio_experience_ease_of_use3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="smartfolio_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use5', 'Very Dissatisfied')" id="smartfolio_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Functionality</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_functionality" name="smartfolio_experience_functionality" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_functionality_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality1', 'Very Satisfied')" id="smartfolio_experience_functionality1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality2', 'Somewhat Satisfied')" id="smartfolio_experience_functionality2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality3', 'Neutral')" id="smartfolio_experience_functionality3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality4', 'Somewhat Dissatisfied')" id="smartfolio_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality5', 'Very Dissatisfied')" id="smartfolio_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Performance</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_performance" name="smartfolio_experience_performance" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_performance_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance1', 'Very Satisfied')" id="smartfolio_experience_performance1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance2', 'Somewhat Satisfied')" id="smartfolio_experience_performance2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance3', 'Neutral')" id="smartfolio_experience_performance3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance4', 'Somewhat Dissatisfied')" id="smartfolio_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance5', 'Very Dissatisfied')" id="smartfolio_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Design and Aesthetics</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_design_and_aesthetics" name="smartfolio_experience_design_and_aesthetics" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_design_and_aesthetics_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics1', 'Very Satisfied')" id="smartfolio_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="smartfolio_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics3', 'Neutral')" id="smartfolio_experience_design_and_aesthetics3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="smartfolio_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="smartfolio_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Security</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_security" name="smartfolio_experience_security" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_security_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security1', 'Very Satisfied')" id="smartfolio_experience_security1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security2', 'Somewhat Satisfied')" id="smartfolio_experience_security2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security3', 'Neutral')" id="smartfolio_experience_security3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security4', 'Somewhat Dissatisfied')" id="smartfolio_experience_security4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security5', 'Very Dissatisfied')" id="smartfolio_experience_security5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Push Notifications</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_push_notifications" name="smartfolio_experience_push_notifications" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_push_notifications_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications1', 'Very Satisfied')" id="smartfolio_experience_push_notifications1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications2', 'Somewhat Satisfied')" id="smartfolio_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications3', 'Neutral')" id="smartfolio_experience_push_notifications3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications4', 'Somewhat Dissatisfied')" id="smartfolio_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications5', 'Very Dissatisfied')" id="smartfolio_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">App Speed</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="smartfolio_experience_app_speed" name="smartfolio_experience_app_speed" value="">
+                                                  <div class="ratingexperience" id="smartfolio_experience_app_speed_parent">
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed1', 'Very Satisfied')" id="smartfolio_experience_app_speed1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed2', 'Somewhat Satisfied')" id="smartfolio_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed3', 'Neutral')" id="smartfolio_experience_app_speed3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed4', 'Somewhat Dissatisfied')" id="smartfolio_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed5', 'Very Dissatisfied')" id="smartfolio_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                              </ol>
+                         `;
+                         var comment = document.querySelector('#comments');
+                         var mf = document.querySelector('#mutual_fund_recommendations_container');
+                         if(mf) {
+                              survey_ui.insertBefore(li, mf);
+                         } else {
+                              survey_ui.insertBefore(li, comment);
+                         }
+                    }
+               } else {
+                    var item2 = document.getElementById('smartfolio_container');
+                    if (item2) {
+                         survey_ui.removeChild(item2);
+                    } 
+               }
+               if( (document.getElementById('mutual_fund_recommendations_experience').value && document.getElementById('mutual_fund_recommendations_experience').value != '')) {
+                    if(!document.getElementById('mutual_fund_recommendations_container')) {
+                         const li = document.createElement("li");
+                         li.setAttribute("id", "mutual_fund_recommendations_container");
+                         li.innerHTML  = `
+                              <label class="labelstrong">Rate your experience on our Fundsgenie mobile application</label>
+                              <ol type="a" id="mutual_fund_recommendations_experience">
+                                   <li>
+                                        <label class="labelstrong">Ease of Use</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_ease_of_use" name="mutual_fund_recommendations_experience_ease_of_use" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_ease_of_use_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_ease_of_use1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use3', 'Neutral')" id="mutual_fund_recommendations_experience_ease_of_use3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Functionality</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_functionality" name="mutual_fund_recommendations_experience_functionality" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_functionality_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_functionality1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_functionality2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality3', 'Neutral')" id="mutual_fund_recommendations_experience_functionality3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Performance</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_performance" name="mutual_fund_recommendations_experience_performance" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_performance_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_performance1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_performance2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance3', 'Neutral')" id="mutual_fund_recommendations_experience_performance3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Design and Aesthetics</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_design_and_aesthetics" name="mutual_fund_recommendations_experience_design_and_aesthetics" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_design_and_aesthetics_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics3', 'Neutral')" id="mutual_fund_recommendations_experience_design_and_aesthetics3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Security</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_security" name="mutual_fund_recommendations_experience_security" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_security_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_security1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_security2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security3', 'Neutral')" id="mutual_fund_recommendations_experience_security3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_security4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_security5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">Push Notifications</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_push_notifications" name="mutual_fund_recommendations_experience_push_notifications" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_push_notifications_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_push_notifications1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications3', 'Neutral')" id="mutual_fund_recommendations_experience_push_notifications3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                                   <li>
+                                        <label class="labelstrong">App Speed</label>
+                                        <div class="formGroup">
+                                             <p>
+                                                  <input type="hidden" id="mutual_fund_recommendations_experience_app_speed" name="mutual_fund_recommendations_experience_app_speed" value="">
+                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_app_speed_parent">
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_app_speed1" class="verysatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed3', 'Neutral')" id="mutual_fund_recommendations_experience_app_speed3" class="neutral_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
+                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                                  </div>
+                                             </p>
+                                        </div>
+                                        <div class="ratingExperienceFooter">
+                                             <span class="value">&nbsp;</span>
+                                        </div>
+                                   </li>
+                              </ol>
+                         `;
+                         var comment = document.querySelector('#comments');
+                         survey_ui.insertBefore(li, comment);
+                    }
+               } else {
+                    var item3 = document.getElementById('mutual_fund_recommendations_container');
+                    if (item3) {
+                         survey_ui.removeChild(item3);
+                    } 
+               }
+          }
+          function selectExperienceRating(formField, selectedItem, value) {
+               const parentDiv = document.getElementById(formField+'_parent');
+               const childSpans = parentDiv.querySelectorAll("span");
+               var element = document.getElementById(selectedItem);
+               var parent_li = parentDiv.closest("li");
+               if(value == 'Very Satisfied') {
+                    if (element.classList.contains("verysatisfied_disabled")) {
+                         element.classList.remove("verysatisfied_disabled");
+                         element.classList.add("verysatisfied_enabled");
+                         document.getElementById(formField).value = value;
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Very Satisfied';
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:0px");
+                    } else {
+                         document.getElementById(formField).value = '';
+                    }
+                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
+               } else if(value == 'Somewhat Satisfied') {
+                    if (element.classList.contains("somewhat_satisfied_disabled")) {
+                         element.classList.remove("somewhat_satisfied_disabled");
+                         element.classList.add("somewhat_satisfied_enabled");
+                         document.getElementById(formField).value = value;
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Somewhat Satisfied';
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:32px");
+                    } else {
+                         document.getElementById(formField).value = '';
+                    }
+                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
+               } else if(value == 'Neutral') {
+                    if (element.classList.contains("neutral_disabled")) {
+                         element.classList.remove("neutral_disabled");
+                         element.classList.add("neutral_enabled");
+                         document.getElementById(formField).value = value;
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Neutral';
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:128px");
+                    } else {
+                         document.getElementById(formField).value = '';
+                    }
+                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
+               } else if(value == 'Somewhat Dissatisfied') {
+                    if (element.classList.contains("somewhat_dissatisfied_disabled")) {
+                         element.classList.remove("somewhat_dissatisfied_disabled");
+                         element.classList.add("somewhat_dissatisfied_enabled");
+                         document.getElementById(formField).value = value;
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Somewhat Dissatisfied';
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:158px");
+                    } else {
+                         document.getElementById(formField).value = '';
+                    }
+                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
+                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
+               } else if(value == 'Very Dissatisfied') {
+                    if (element.classList.contains("very_dissatisfied_disabled")) {
+                         element.classList.remove("very_dissatisfied_disabled");
+                         element.classList.add("very_dissatisfied_enabled");
+                         document.getElementById(formField).value = value;
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Very Dissatisfied';
+                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","right:0px");
+
+                    } else {
+                         document.getElementById(formField).value = '';
+                    }
+                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
+                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
+                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
+                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
+               }
+          }
+          const form = document.querySelector('#survey');
+          function validateForm(event) {
+               event.preventDefault();
+               let formData = new FormData();
+               let msg = '';
+               let valid = true;
+               if(document.forms["survey"]["age_group"].value && document.forms["survey"]["age_group"].value != '') {
+                    formData.append('age_group', document.forms["survey"]["age_group"].value);
+               } else {
+                    valid = false;
+                    const index = $('#age_group_container').index();
+                    if(msg == '') {
+                         msg = (index+1) + '. Age Group is Required';
+                    } else {
+                         msg = msg + '\n'+(index+1) + '. Age Group is Required';
+                    }
+               }
+               if(document.forms["survey"]["satisfied_with_product_and_services"].value && document.forms["survey"]["satisfied_with_product_and_services"].value != '') {
+                    formData.append('satisfied_with_product_and_services', document.forms["survey"]["satisfied_with_product_and_services"].value);
+               } else {
+                    valid = false;
+                    const index = $('#satisfied_with_product_and_services_container').index();
+                    if(msg == '') {
+                         msg = (index+1) + '. Overall, how satisfied are you with our products/services is required';
+                    } else {
+                         msg = msg + '\n'+(index+1) + '. Overall, how satisfied are you with our products/services is required';
+                    }
+               }
+               if(document.forms["survey"]["geojit_is_a_reputed_brand"].value && document.forms["survey"]["geojit_is_a_reputed_brand"].value != '') {
+                    formData.append('geojit_is_a_reputed_brand', document.forms["survey"]["geojit_is_a_reputed_brand"].value);
+               } else {
+                    valid = false;
+                    const index = $('#statements_that_describe_geojit_container').index();
+                    if(msg == '') {
+                         msg = (index+1)+'.a' + '. Geojit is a reputed brand is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)+'.a'  + '. Geojit is a reputed brand is required';
+                    }
+               }
+               if(document.forms["survey"]["geojit_is_a_trusted_investment_service_partner"].value && document.forms["survey"]["geojit_is_a_trusted_investment_service_partner"].value != '') {
+                    formData.append('geojit_is_a_trusted_investment_service_partner', document.forms["survey"]["geojit_is_a_trusted_investment_service_partner"].value);
+               } else {
+                    valid = false;
+                    const index = $('#statements_that_describe_geojit_container').index();
+                    if(msg == '') {
+                         msg = (index+1)+'.b' + '. Geojit is your trusted investment services partner is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)+'.b'  + '. Geojit is your trusted investment services partner is required';
+                    }
+               }
+               if(document.forms["survey"]["geojit_product_offerings_help_meet_my_financial_goals"].value && document.forms["survey"]["geojit_product_offerings_help_meet_my_financial_goals"].value != '') {
+                    formData.append('geojit_product_offerings_help_meet_my_financial_goals', document.forms["survey"]["geojit_product_offerings_help_meet_my_financial_goals"].value);
+               } else {
+                    valid = false;
+                    const index = $('#statements_that_describe_geojit_container').index();
+                    if(msg == '') {
+                         msg = (index+1)+'.c' + '. Geojit product offerings help me meet my financial goals is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)+'.c'  + '. Geojit product offerings help me meet my financial goals is required';
+                    }
+               }
+               if(document.forms["survey"]["geojit_has_extensive_branch_network"].value && document.forms["survey"]["geojit_has_extensive_branch_network"].value != '') {
+                    formData.append('geojit_has_extensive_branch_network', document.forms["survey"]["geojit_has_extensive_branch_network"].value);
+               } else {
+                    valid = false;
+                    const index = $('#statements_that_describe_geojit_container').index();
+                    if(msg == '') {
+                         msg = (index+1)+'.d' + '. Geojit has extensive branch network is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)+'.d'  + '. Geojit has extensive branch network is required';
+                    }
+               }
+               if(document.forms["survey"]["geojit_conducts_business_in_a_socially_responsible_manner"].value && document.forms["survey"]["geojit_conducts_business_in_a_socially_responsible_manner"].value != '') {
+                    formData.append('geojit_conducts_business_in_a_socially_responsible_manner', document.forms["survey"]["geojit_conducts_business_in_a_socially_responsible_manner"].value);
+               } else {
+                    valid = false;
+                    const index = $('#statements_that_describe_geojit_container').index();
+                    if(msg == '') {
+                         msg = (index+1)+'.e' + '. Geojit conducts business in a socially responsible manner is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)+'.e'  + '. Geojit conducts business in a socially responsible manner is required';
+                    }
+               }
+               if(document.forms["survey"]["recommend_geojit_to_a_friend"].value && document.forms["survey"]["recommend_geojit_to_a_friend"].value != '') {
+                    formData.append('recommend_geojit_to_a_friend', document.forms["survey"]["recommend_geojit_to_a_friend"].value);
+               } else {
+                    valid = false;
+                    const index = $('#recommend_geojit_to_a_friend_container').index();
+                    if(msg == '') {
+                         msg = (index+1) + '. How likely are you to recommend Geojit to a friend or colleague is required';
+                    } else {
+                         msg = msg + '\n'+(index+1)  + '. How likely are you to recommend Geojit to a friend or colleague is required';
+                    }
+               }
+               formData.append('onboarding_experience', document.forms["survey"]["onboarding_experience"].value);
+               formData.append('branch_service_experience', document.forms["survey"]["branch_service_experience"].value);
+               formData.append('customer_service_at_HO_experience', document.forms["survey"]["customer_service_at_HO_experience"].value);
+               formData.append('fundamental_research_recommendations_experience', document.forms["survey"]["fundamental_research_recommendations_experience"].value);
+               formData.append('technical_research_recommendations_experience', document.forms["survey"]["technical_research_recommendations_experience"].value);
+               formData.append('commodity_research_recommendations_experience', document.forms["survey"]["commodity_research_recommendations_experience"].value);
+               formData.append('smartfolio_recommendations_experience', document.forms["survey"]["smartfolio_recommendations_experience"].value);
+               formData.append('mutual_fund_recommendations_experience', document.forms["survey"]["mutual_fund_recommendations_experience"].value);
+               formData.append('pms_experience', document.forms["survey"]["pms_experience"].value);
+               if(document.forms["survey"]["fundamental_research_recommendations_experience"].value && document.forms["survey"]["fundamental_research_recommendations_experience"].value != '') {
+                    const index = $('#flip_mobile_experience_container').index();
+                    if(document.forms["survey"]["flip_mobile_experience_ease_of_use"].value && document.forms["survey"]["flip_mobile_experience_ease_of_use"].value != '') {
+                         formData.append('flip_mobile_experience_ease_of_use', document.forms["survey"]["flip_mobile_experience_ease_of_use"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.a. Ease of Use is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.a. Ease of Use is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_functionality"].value && document.forms["survey"]["flip_mobile_experience_functionality"].value != '') {
+                         formData.append('flip_mobile_experience_functionality', document.forms["survey"]["flip_mobile_experience_functionality"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.b. Functionality is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.b. Functionality is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_performance"].value && document.forms["survey"]["flip_mobile_experience_performance"].value != '') {
+                         formData.append('flip_mobile_experience_performance', document.forms["survey"]["flip_mobile_experience_performance"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.c. Performance is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.c. Performance is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_design_and_aesthetics"].value && document.forms["survey"]["flip_mobile_experience_design_and_aesthetics"].value != '') {
+                         formData.append('flip_mobile_experience_design_and_aesthetics', document.forms["survey"]["flip_mobile_experience_design_and_aesthetics"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.d. Design and Aesthetics is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.d. Design and Aesthetics is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_security"].value && document.forms["survey"]["flip_mobile_experience_security"].value != '') {
+                         formData.append('flip_mobile_experience_security', document.forms["survey"]["flip_mobile_experience_security"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.e. Security is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.e. Security is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_push_notifications"].value && document.forms["survey"]["flip_mobile_experience_push_notifications"].value != '') {
+                         formData.append('flip_mobile_experience_push_notifications', document.forms["survey"]["flip_mobile_experience_push_notifications"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.f. Push Notifications is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                         }
+                    }
+                    if(document.forms["survey"]["flip_mobile_experience_app_speed"].value && document.forms["survey"]["flip_mobile_experience_app_speed"].value != '') {
+                         formData.append('flip_mobile_experience_app_speed', document.forms["survey"]["flip_mobile_experience_app_speed"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.g. App Speed is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.g. App Speed is required';
+                         }
+                    }
+               }
+               if(document.forms["survey"]["technical_research_recommendations_experience"].value && document.forms["survey"]["technical_research_recommendations_experience"].value != '') {
+                    const index = $('#traderx_container').index();
+                    if(document.forms["survey"]["traderx_experience_ease_of_use"].value && document.forms["survey"]["traderx_experience_ease_of_use"].value != '') {
+                         formData.append('traderx_experience_ease_of_use', document.forms["survey"]["traderx_experience_ease_of_use"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.a. Ease of Use is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.a. Ease of Use is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_functionality"].value && document.forms["survey"]["traderx_experience_functionality"].value != '') {
+                         formData.append('traderx_experience_functionality', document.forms["survey"]["traderx_experience_functionality"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.b. Functionality is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.b. Functionality is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_performance"].value && document.forms["survey"]["traderx_experience_performance"].value != '') {
+                         formData.append('traderx_experience_performance', document.forms["survey"]["traderx_experience_performance"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.c. Performance is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.c. Performance is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_design_and_aesthetics"].value && document.forms["survey"]["traderx_experience_design_and_aesthetics"].value != '') {
+                         formData.append('traderx_experience_design_and_aesthetics', document.forms["survey"]["traderx_experience_design_and_aesthetics"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.d. Design and Aesthetics is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.d. Design and Aesthetics is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_security"].value && document.forms["survey"]["traderx_experience_security"].value != '') {
+                         formData.append('traderx_experience_security', document.forms["survey"]["traderx_experience_security"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.e. Security is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.e. Security is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_push_notifications"].value && document.forms["survey"]["traderx_experience_push_notifications"].value != '') {
+                         formData.append('traderx_experience_push_notifications', document.forms["survey"]["traderx_experience_push_notifications"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.f. Push Notifications is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                         }
+                    }
+                    if(document.forms["survey"]["traderx_experience_app_speed"].value && document.forms["survey"]["traderx_experience_app_speed"].value != '') {
+                         formData.append('traderx_experience_app_speed', document.forms["survey"]["traderx_experience_app_speed"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.g. App Speed is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.g. App Speed is required';
+                         }
+                    }
+               }
+               if(document.forms["survey"]["smartfolio_recommendations_experience"].value && document.forms["survey"]["smartfolio_recommendations_experience"].value != '') {
+                    const index = $('#smartfolio_container').index();
+                    if(document.forms["survey"]["smartfolio_experience_ease_of_use"].value && document.forms["survey"]["smartfolio_experience_ease_of_use"].value != '') {
+                         formData.append('smartfolio_experience_ease_of_use', document.forms["survey"]["smartfolio_experience_ease_of_use"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.a. Ease of Use is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.a. Ease of Use is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_functionality"].value && document.forms["survey"]["smartfolio_experience_functionality"].value != '') {
+                         formData.append('smartfolio_experience_functionality', document.forms["survey"]["smartfolio_experience_functionality"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.b. Functionality is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.b. Functionality is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_performance"].value && document.forms["survey"]["smartfolio_experience_performance"].value != '') {
+                         formData.append('smartfolio_experience_performance', document.forms["survey"]["smartfolio_experience_performance"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.c. Performance is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.c. Performance is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_design_and_aesthetics"].value && document.forms["survey"]["smartfolio_experience_design_and_aesthetics"].value != '') {
+                         formData.append('smartfolio_experience_design_and_aesthetics', document.forms["survey"]["smartfolio_experience_design_and_aesthetics"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.d. Design and Aesthetics is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.d. Design and Aesthetics is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_security"].value && document.forms["survey"]["smartfolio_experience_security"].value != '') {
+                         formData.append('smartfolio_experience_security', document.forms["survey"]["smartfolio_experience_security"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.e. Security is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.e. Security is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_push_notifications"].value && document.forms["survey"]["smartfolio_experience_push_notifications"].value != '') {
+                         formData.append('smartfolio_experience_push_notifications', document.forms["survey"]["smartfolio_experience_push_notifications"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.f. Push Notifications is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                         }
+                    }
+                    if(document.forms["survey"]["smartfolio_experience_app_speed"].value && document.forms["survey"]["smartfolio_experience_app_speed"].value != '') {
+                         formData.append('smartfolio_experience_app_speed', document.forms["survey"]["smartfolio_experience_app_speed"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.g. App Speed is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.g. App Speed is required';
+                         }
+                    }
+               }
+               if(document.forms["survey"]["mutual_fund_recommendations_experience"].value && document.forms["survey"]["mutual_fund_recommendations_experience"].value != '') {
+                    const index = $('#mutual_fund_recommendations_container').index();
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_ease_of_use"].value && document.forms["survey"]["mutual_fund_recommendations_experience_ease_of_use"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_ease_of_use', document.forms["survey"]["mutual_fund_recommendations_experience_ease_of_use"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.a. Ease of Use is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.a. Ease of Use is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_functionality"].value && document.forms["survey"]["mutual_fund_recommendations_experience_functionality"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_functionality', document.forms["survey"]["mutual_fund_recommendations_experience_functionality"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.b. Functionality is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.b. Functionality is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_performance"].value && document.forms["survey"]["mutual_fund_recommendations_experience_performance"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_performance', document.forms["survey"]["mutual_fund_recommendations_experience_performance"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.c. Performance is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.c. Performance is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_design_and_aesthetics"].value && document.forms["survey"]["mutual_fund_recommendations_experience_design_and_aesthetics"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_design_and_aesthetics', document.forms["survey"]["mutual_fund_recommendations_experience_design_and_aesthetics"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.d. Design and Aesthetics is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.d. Design and Aesthetics is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_security"].value && document.forms["survey"]["mutual_fund_recommendations_experience_security"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_security', document.forms["survey"]["mutual_fund_recommendations_experience_security"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.e. Security is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.e. Security is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_push_notifications"].value && document.forms["survey"]["mutual_fund_recommendations_experience_push_notifications"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_push_notifications', document.forms["survey"]["mutual_fund_recommendations_experience_push_notifications"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.f. Push Notifications is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                         }
+                    }
+                    if(document.forms["survey"]["mutual_fund_recommendations_experience_app_speed"].value && document.forms["survey"]["mutual_fund_recommendations_experience_app_speed"].value != '') {
+                         formData.append('mutual_fund_recommendations_experience_app_speed', document.forms["survey"]["mutual_fund_recommendations_experience_app_speed"].value);
+                    } else {
+                         valid = false;
+                         if(msg == '') {
+                              msg = (index+1) + '.g. App Speed is required';
+                         } else {
+                              msg = msg + '\n'+(index+1)  + '.g. App Speed is required';
+                         }
+                    }
+               }
+               formData.append('comments', document.forms["survey"]["comments"].value);
+               if(!valid) {
+                    alert(msg);
+                    return false;
+               }
+	          const data = {};
+	          for (let keyValue of formData.entries()) {
+		          data[keyValue[0]] = keyValue[1];
+	          }
+	          console.log(data);
+          }
+          form.addEventListener(`submit`, validateForm);
+     </script>
+</html>
