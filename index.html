@@ -216,11 +216,15 @@
                     max-width: 330px;
                     width: 328px;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    align-items: flex-start;
+                    justify-content: flex-start;
                     height: 36px;
                     font-size: 16px;
                     border-right: 1px solid #D7D7D7;
+               }
+               .rating-full {
+                    width: 768px !important;
+                    max-width: 768px !important;
                }
                .rating span {
                     border: 1px solid #D7D7D7;
@@ -231,6 +235,9 @@
                     align-items: center;
                     justify-content: center;
                     cursor: pointer;
+               }
+               .rating-full span {
+                    width: 76.8px !important
                }
                .ratingspandefault {
                     color: #4C4C4C;
@@ -245,15 +252,28 @@
                     align-items: center;
                     justify-content: space-between;
                     max-width: 328px;
+                    width: 328px;
                     margin-bottom: 30px;
                     font-size: 12px;
                }
-               .ratingfooter span {
+               .ratingfooter-full {
+                    width: 768px !important;
+                    max-width: 768px;
+               }
+               .ratingfooter span, .ratingfooter-full span {
                     width: 100px;
                }
-               @media only screen and (max-width: 768px) {
+               @media only screen and (max-width: 992px) {
                     .rating {
                          width: 100%;
+                    }
+                    .rating-full {
+                         width: 100% !important;
+                         max-width: 100% !important;
+                    }
+                    .ratingfooter-full, .ratingfooter {
+                         width: 100% !important;
+                         max-width: 100% !important;
                     }
                }
                .ratingexperience {
@@ -385,6 +405,32 @@
                     color: #3c3c3c !important;
                     outline: 0;
                }
+               .starContainer {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    max-width: 270px;
+               }
+               .starContainer .stars {
+                    width: 100%
+               }
+               .starContainer .stars .star {
+                    font-size: 30px;
+                    cursor: pointer;
+                    color: #cccccc;
+                    margin-right: 20px;
+               }
+               .starContainer .stars .star:last-child {
+                    margin-right: 0px;
+               }
+               .starcolor {
+                    color: #3E877C !important;
+               }
+               .starrating {
+                    min-height: 20px;
+                    text-align: center;
+                    margin-top: 5px;
+                    font-size: 14px;
+               }
           </style>
      </head>
      <body>
@@ -430,27 +476,23 @@
                               </li>
                               <li id="satisfied_with_product_and_services_container">
                                    <label class="labelstrong">Overall, how satisfied are you with our products/services?</label>
-                                   <div class="formGroup">
-                                        <p>
-                                             <input type="radio" id="satisfied_with_product_and_services1" name="satisfied_with_product_and_services" value="Very Satisfied">
-                                             <label for="satisfied_with_product_and_services1" class="sublabel"> Very Satisfied</label>
-                                        </p>
-                                        <p>
-                                             <input type="radio" id="satisfied_with_product_and_services2" name="satisfied_with_product_and_services" value="Satisfied">
-                                             <label for="satisfied_with_product_and_services2" class="sublabel"> Satisfied</label>
-                                        </p>
-                                        <p>
-                                             <input type="radio" id="satisfied_with_product_and_services3" name="satisfied_with_product_and_services" value="Neutral">
-                                             <label for="satisfied_with_product_and_services3" class="sublabel"> Neutral</label>
-                                        </p>
-                                        <p>
-                                             <input type="radio" id="satisfied_with_product_and_services4" name="satisfied_with_product_and_services" value="Dissatisfied">
-                                             <label for="satisfied_with_product_and_services4" class="sublabel"> Dissatisfied</label>
-                                        </p>
-                                        <p>
-                                             <input type="radio" id="satisfied_with_product_and_services5" name="satisfied_with_product_and_services" value="Very Dissatisfied">
-                                             <label for="satisfied_with_product_and_services5" class="sublabel"> Very Dissatisfied</label>
-                                        </p>
+                                   <div class="formGroup" id=satisfied_with_product_and_services_container_star>
+                                        <div class="starContainer">
+                                             <div class="stars">
+                                                  <span onclick="starRating('satisfied_with_product_and_services_container_star','satisfied_with_product_and_services',1)" class="star">★
+                                                  </span>
+                                                  <span onclick="starRating('satisfied_with_product_and_services_container_star','satisfied_with_product_and_services',2)" class="star">★
+                                                  </span>
+                                                  <span onclick="starRating('satisfied_with_product_and_services_container_star','satisfied_with_product_and_services',3)" class="star">★
+                                                  </span>
+                                                  <span onclick="starRating('satisfied_with_product_and_services_container_star','satisfied_with_product_and_services',4)" class="star">★
+                                                  </span>
+                                                  <span onclick="starRating('satisfied_with_product_and_services_container_star','satisfied_with_product_and_services',5)" class="star">★
+                                                  </span>
+                                             </div>
+                                             <div class="starrating"></div>
+                                        </div>
+                                        <input type="hidden" id="satisfied_with_product_and_services" name="satisfied_with_product_and_services" value="">
                                    </div>
                               </li>
                               <li id="statements_that_describe_geojit_container">
@@ -588,22 +630,28 @@
                                    <div class="formGroup">
                                         <p>
                                              <input type="hidden" id="recommend_geojit_to_a_friend" name="recommend_geojit_to_a_friend" value="">
-                                             <div class="rating" id="recommend_geojit_to_a_friend_parent">
+                                             <div class="rating rating-full" id="recommend_geojit_to_a_friend_parent">
                                                   <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend1', '1')" id="recommend_geojit_to_a_friend1" class="ratingspandefault">1</span>
                                                   <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend2', '2')" id="recommend_geojit_to_a_friend2" class="ratingspandefault">2</span>
                                                   <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend3', '3')" id="recommend_geojit_to_a_friend3" class="ratingspandefault">3</span>
                                                   <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend4', '4')" id="recommend_geojit_to_a_friend4" class="ratingspandefault">4</span>
                                                   <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend5', '5')" id="recommend_geojit_to_a_friend5" class="ratingspandefault">5</span>
+
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend6', '6')" id="recommend_geojit_to_a_friend6" class="ratingspandefault">6</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend7', '7')" id="recommend_geojit_to_a_friend7" class="ratingspandefault">7</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend8', '8')" id="recommend_geojit_to_a_friend8" class="ratingspandefault">8</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend9', '9')" id="recommend_geojit_to_a_friend9" class="ratingspandefault">9</span>
+                                                  <span onclick="selectRating('recommend_geojit_to_a_friend','recommend_geojit_to_a_friend10', '10')" id="recommend_geojit_to_a_friend10" class="ratingspandefault">10</span>
                                              </div>
                                         </p>
                                    </div>
-                                   <div class="ratingfooter">
+                                   <div class="ratingfooter ratingfooter-full">
                                         <span>Not at all likely</span>
                                         <span class="text-right">Extremely likely</span>
                                    </div>
                               </li>
                               <li id="service_experience_container">
-                                   <label class="labelstrong">Rate your service experience <em>(Rate only the services applicable to you)</em></label>
+                                   <label class="labelstrong">Rate your service experience <em>(Select if applicable)</em></label>
                                    <ol type="a">
                                         <li>
                                              <label class="labelstrong">Onboarding Experience</label>
@@ -830,128 +878,149 @@
                               <ol type="a" id="flip_mobile_experience">
                                    <li>
                                         <label class="labelstrong">Ease of Use</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_ease_of_use" name="flip_mobile_experience_ease_of_use" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_ease_of_use_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use1', 'Very Satisfied')" id="flip_mobile_experience_ease_of_use1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use2', 'Somewhat Satisfied')" id="flip_mobile_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use3', 'Neutral')" id="flip_mobile_experience_ease_of_use3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_ease_of_use','flip_mobile_experience_ease_of_use5', 'Very Dissatisfied')" id="flip_mobile_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_ease_of_use_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_ease_of_use_parent_star','flip_mobile_experience_ease_of_use',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_ease_of_use_parent_star','flip_mobile_experience_ease_of_use',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_ease_of_use_parent_star','flip_mobile_experience_ease_of_use',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_ease_of_use_parent_star','flip_mobile_experience_ease_of_use',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_ease_of_use_parent_star','flip_mobile_experience_ease_of_use',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_ease_of_use" name="flip_mobile_experience_ease_of_use" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Functionality</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_functionality" name="flip_mobile_experience_functionality" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_functionality_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality1', 'Very Satisfied')" id="flip_mobile_experience_functionality1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality2', 'Somewhat Satisfied')" id="flip_mobile_experience_functionality2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality3', 'Neutral')" id="flip_mobile_experience_functionality3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_functionality','flip_mobile_experience_functionality5', 'Very Dissatisfied')" id="flip_mobile_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_functionality_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_functionality_parent_star','flip_mobile_experience_functionality',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_functionality_parent_star','flip_mobile_experience_functionality',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_functionality_parent_star','flip_mobile_experience_functionality',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_functionality_parent_star','flip_mobile_experience_functionality',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_functionality_parent_star','flip_mobile_experience_functionality',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_functionality" name="flip_mobile_experience_functionality" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Performance</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_performance" name="flip_mobile_experience_performance" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_performance_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance1', 'Very Satisfied')" id="flip_mobile_experience_performance1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance2', 'Somewhat Satisfied')" id="flip_mobile_experience_performance2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance3', 'Neutral')" id="flip_mobile_experience_performance3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_performance','flip_mobile_experience_performance5', 'Very Dissatisfied')" id="flip_mobile_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_performance_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_performance_parent_star','flip_mobile_experience_performance',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_performance_parent_star','flip_mobile_experience_performance',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_performance_parent_star','flip_mobile_experience_performance',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_performance_parent_star','flip_mobile_experience_performance',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_performance_parent_star','flip_mobile_experience_performance',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_performance" name="flip_mobile_experience_performance" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Design and Aesthetics</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_design_and_aesthetics" name="flip_mobile_experience_design_and_aesthetics" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_design_and_aesthetics_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics1', 'Very Satisfied')" id="flip_mobile_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="flip_mobile_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics3', 'Neutral')" id="flip_mobile_experience_design_and_aesthetics3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_design_and_aesthetics','flip_mobile_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="flip_mobile_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_design_and_aesthetics_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_design_and_aesthetics_parent_star','flip_mobile_experience_design_and_aesthetics',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_design_and_aesthetics_parent_star','flip_mobile_experience_design_and_aesthetics',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_design_and_aesthetics_parent_star','flip_mobile_experience_design_and_aesthetics',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_design_and_aesthetics_parent_star','flip_mobile_experience_design_and_aesthetics',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_design_and_aesthetics_parent_star','flip_mobile_experience_design_and_aesthetics',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_design_and_aesthetics" name="flip_mobile_experience_design_and_aesthetics" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Security</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_security" name="flip_mobile_experience_security" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_security_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security1', 'Very Satisfied')" id="flip_mobile_experience_security1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security2', 'Somewhat Satisfied')" id="flip_mobile_experience_security2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security3', 'Neutral')" id="flip_mobile_experience_security3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_security4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_security','flip_mobile_experience_security5', 'Very Dissatisfied')" id="flip_mobile_experience_security5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_security_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_security_parent_star','flip_mobile_experience_security',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_security_parent_star','flip_mobile_experience_security',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_security_parent_star','flip_mobile_experience_security',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_security_parent_star','flip_mobile_experience_security',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_security_parent_star','flip_mobile_experience_security',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_security" name="flip_mobile_experience_security" value="">
                                         </div>
                                    </li>
                                    <li>
-                                        <label class="labelstrong">Push Notifications</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_push_notifications" name="flip_mobile_experience_push_notifications" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_push_notifications_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications1', 'Very Satisfied')" id="flip_mobile_experience_push_notifications1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications2', 'Somewhat Satisfied')" id="flip_mobile_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications3', 'Neutral')" id="flip_mobile_experience_push_notifications3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_push_notifications','flip_mobile_experience_push_notifications5', 'Very Dissatisfied')" id="flip_mobile_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Notifications</label>
+                                        <div class="formGroup" id="flip_mobile_experience_push_notifications_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_push_notifications_parent_star','flip_mobile_experience_push_notifications',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_push_notifications_parent_star','flip_mobile_experience_push_notifications',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_push_notifications_parent_star','flip_mobile_experience_push_notifications',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_push_notifications_parent_star','flip_mobile_experience_push_notifications',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_push_notifications_parent_star','flip_mobile_experience_push_notifications',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_push_notifications" name="flip_mobile_experience_push_notifications" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">App Speed</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="flip_mobile_experience_app_speed" name="flip_mobile_experience_app_speed" value="">
-                                                  <div class="ratingexperience" id="flip_mobile_experience_app_speed_parent">
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed1', 'Very Satisfied')" id="flip_mobile_experience_app_speed1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed2', 'Somewhat Satisfied')" id="flip_mobile_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed3', 'Neutral')" id="flip_mobile_experience_app_speed3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed4', 'Somewhat Dissatisfied')" id="flip_mobile_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('flip_mobile_experience_app_speed','flip_mobile_experience_app_speed5', 'Very Dissatisfied')" id="flip_mobile_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="flip_mobile_experience_app_speed_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('flip_mobile_experience_app_speed_parent_star','flip_mobile_experience_app_speed',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_app_speed_parent_star','flip_mobile_experience_app_speed',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_app_speed_parent_star','flip_mobile_experience_app_speed',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_app_speed_parent_star','flip_mobile_experience_app_speed',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('flip_mobile_experience_app_speed_parent_star','flip_mobile_experience_app_speed',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="flip_mobile_experience_app_speed" name="flip_mobile_experience_app_speed" value="">
                                         </div>
                                    </li>
                               </ol>
@@ -969,132 +1038,153 @@
                          const li = document.createElement("li");
                          li.setAttribute("id", "traderx_container");
                          li.innerHTML  = `
-                              <label class="labelstrong">Rate your experience on our TraderX application</label>
+                              <label class="labelstrong">Rate your experience on our TraderX application <em>(Select if applicable)</em></label>
                               <ol type="a" id="traderx_experience">
                                    <li>
                                         <label class="labelstrong">Ease of Use</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_ease_of_use" name="traderx_experience_ease_of_use" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_ease_of_use_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use1', 'Very Satisfied')" id="traderx_experience_ease_of_use1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use2', 'Somewhat Satisfied')" id="traderx_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use3', 'Neutral')" id="traderx_experience_ease_of_use3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="traderx_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_ease_of_use','traderx_experience_ease_of_use5', 'Very Dissatisfied')" id="traderx_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="traderx_experience_ease_of_use_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_ease_of_use_parent_star','traderx_experience_ease_of_use',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_ease_of_use_parent_star','traderx_experience_ease_of_use',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_ease_of_use_parent_star','traderx_experience_ease_of_use',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_ease_of_use_parent_star','traderx_experience_ease_of_use',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_ease_of_use_parent_star','traderx_experience_ease_of_use',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_ease_of_use" name="traderx_experience_ease_of_use" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Functionality</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_functionality" name="traderx_experience_functionality" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_functionality_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality1', 'Very Satisfied')" id="traderx_experience_functionality1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality2', 'Somewhat Satisfied')" id="traderx_experience_functionality2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality3', 'Neutral')" id="traderx_experience_functionality3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality4', 'Somewhat Dissatisfied')" id="traderx_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_functionality','traderx_experience_functionality5', 'Very Dissatisfied')" id="traderx_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="traderx_experience_functionality_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_functionality_parent_star','traderx_experience_functionality',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_functionality_parent_star','traderx_experience_functionality',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_functionality_parent_star','traderx_experience_functionality',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_functionality_parent_star','traderx_experience_functionality',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_functionality_parent_star','traderx_experience_functionality',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_functionality" name="traderx_experience_functionality" value="">
                                         </div>
                                    </li>
                                    <li>
-                                        <label class="labelstrong">Performance</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_performance" name="traderx_experience_performance" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_performance_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance1', 'Very Satisfied')" id="traderx_experience_performance1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance2', 'Somewhat Satisfied')" id="traderx_experience_performance2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance3', 'Neutral')" id="traderx_experience_performance3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance4', 'Somewhat Dissatisfied')" id="traderx_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_performance','traderx_experience_performance5', 'Very Dissatisfied')" id="traderx_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Performance</label> 
+                                        <div class="formGroup" id="traderx_experience_performance_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_performance_parent_star','traderx_experience_performance',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_performance_parent_star','traderx_experience_performance',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_performance_parent_star','traderx_experience_performance',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_performance_parent_star','traderx_experience_performance',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_performance_parent_star','traderx_experience_performance',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_performance" name="traderx_experience_performance" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Design and Aesthetics</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_design_and_aesthetics" name="traderx_experience_design_and_aesthetics" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_design_and_aesthetics_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics1', 'Very Satisfied')" id="traderx_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="traderx_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics3', 'Neutral')" id="traderx_experience_design_and_aesthetics3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="traderx_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_design_and_aesthetics','traderx_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="traderx_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="traderx_experience_design_and_aesthetics_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_design_and_aesthetics_parent_star','traderx_experience_design_and_aesthetics',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_design_and_aesthetics_parent_star','traderx_experience_design_and_aesthetics',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_design_and_aesthetics_parent_star','traderx_experience_design_and_aesthetics',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_design_and_aesthetics_parent_star','traderx_experience_design_and_aesthetics',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_design_and_aesthetics_parent_star','traderx_experience_design_and_aesthetics',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_design_and_aesthetics" name="traderx_experience_design_and_aesthetics" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Security</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_security" name="traderx_experience_security" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_security_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security1', 'Very Satisfied')" id="traderx_experience_security1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security2', 'Somewhat Satisfied')" id="traderx_experience_security2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security3', 'Neutral')" id="traderx_experience_security3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security4', 'Somewhat Dissatisfied')" id="traderx_experience_security4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_security','traderx_experience_security5', 'Very Dissatisfied')" id="traderx_experience_security5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="traderx_experience_security_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_security_parent_star','traderx_experience_security',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_security_parent_star','traderx_experience_security',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_security_parent_star','traderx_experience_security',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_security_parent_star','traderx_experience_security',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_security_parent_star','traderx_experience_security',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_security" name="traderx_experience_security" value="">
                                         </div>
                                    </li>
                                    <li>
-                                        <label class="labelstrong">Push Notifications</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_push_notifications" name="traderx_experience_push_notifications" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_push_notifications_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications1', 'Very Satisfied')" id="traderx_experience_push_notifications1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications2', 'Somewhat Satisfied')" id="traderx_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications3', 'Neutral')" id="traderx_experience_push_notifications3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications4', 'Somewhat Dissatisfied')" id="traderx_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_push_notifications','traderx_experience_push_notifications5', 'Very Dissatisfied')" id="traderx_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Notifications</label>
+                                        <div class="formGroup" id="traderx_experience_push_notifications_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_push_notifications_parent_star','traderx_experience_push_notifications',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_push_notifications_parent_star','traderx_experience_push_notifications',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_push_notifications_parent_star','traderx_experience_push_notifications',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_push_notifications_parent_star','traderx_experience_push_notifications',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_push_notifications_parent_star','traderx_experience_push_notifications',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_push_notifications" name="traderx_experience_push_notifications" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">App Speed</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="traderx_experience_app_speed" name="traderx_experience_app_speed" value="">
-                                                  <div class="ratingexperience" id="traderx_experience_app_speed_parent">
-                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed1', 'Very Satisfied')" id="traderx_experience_app_speed1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed2', 'Somewhat Satisfied')" id="traderx_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed3', 'Neutral')" id="traderx_experience_app_speed3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed4', 'Somewhat Dissatisfied')" id="traderx_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('traderx_experience_app_speed','traderx_experience_app_speed5', 'Very Dissatisfied')" id="traderx_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="traderx_experience_app_speed_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('traderx_experience_app_speed_parent_star','traderx_experience_app_speed',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_app_speed_parent_star','traderx_experience_app_speed',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_app_speed_parent_star','traderx_experience_app_speed',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_app_speed_parent_star','traderx_experience_app_speed',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('traderx_experience_app_speed_parent_star','traderx_experience_app_speed',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="traderx_experience_app_speed" name="traderx_experience_app_speed" value="">
                                         </div>
                                    </li>
                               </ol>
@@ -1115,129 +1205,150 @@
                               <label class="labelstrong">Rate your experience on our Smartfolio mobile application</label>
                               <ol type="a" id="smartfolio_experience">
                                    <li>
-                                        <label class="labelstrong">Ease of Use</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_ease_of_use" name="smartfolio_experience_ease_of_use" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_ease_of_use_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use1', 'Very Satisfied')" id="smartfolio_experience_ease_of_use1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use2', 'Somewhat Satisfied')" id="smartfolio_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use3', 'Neutral')" id="smartfolio_experience_ease_of_use3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="smartfolio_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_ease_of_use','smartfolio_experience_ease_of_use5', 'Very Dissatisfied')" id="smartfolio_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Ease of Use</label>\
+                                        <div class="formGroup" id="smartfolio_experience_ease_of_use_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_ease_of_use_parent_star','smartfolio_experience_ease_of_use',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_ease_of_use_parent_star','smartfolio_experience_ease_of_use',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_ease_of_use_parent_star','smartfolio_experience_ease_of_use',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_ease_of_use_parent_star','smartfolio_experience_ease_of_use',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_ease_of_use_parent_star','smartfolio_experience_ease_of_use',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_ease_of_use" name="smartfolio_experience_ease_of_use" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Functionality</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_functionality" name="smartfolio_experience_functionality" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_functionality_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality1', 'Very Satisfied')" id="smartfolio_experience_functionality1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality2', 'Somewhat Satisfied')" id="smartfolio_experience_functionality2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality3', 'Neutral')" id="smartfolio_experience_functionality3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality4', 'Somewhat Dissatisfied')" id="smartfolio_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_functionality','smartfolio_experience_functionality5', 'Very Dissatisfied')" id="smartfolio_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="smartfolio_experience_functionality_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_functionality_parent_star','smartfolio_experience_functionality',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_functionality_parent_star','smartfolio_experience_functionality',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_functionality_parent_star','smartfolio_experience_functionality',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_functionality_parent_star','smartfolio_experience_functionality',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_functionality_parent_star','smartfolio_experience_functionality',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_functionality" name="smartfolio_experience_functionality" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Performance</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_performance" name="smartfolio_experience_performance" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_performance_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance1', 'Very Satisfied')" id="smartfolio_experience_performance1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance2', 'Somewhat Satisfied')" id="smartfolio_experience_performance2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance3', 'Neutral')" id="smartfolio_experience_performance3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance4', 'Somewhat Dissatisfied')" id="smartfolio_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_performance','smartfolio_experience_performance5', 'Very Dissatisfied')" id="smartfolio_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="smartfolio_experience_performance_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_performance_parent_star','smartfolio_experience_performance',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_performance_parent_star','smartfolio_experience_performance',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_performance_parent_star','smartfolio_experience_performance',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_performance_parent_star','smartfolio_experience_performance',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_performance_parent_star','smartfolio_experience_performance',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_performance" name="smartfolio_experience_performance" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Design and Aesthetics</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_design_and_aesthetics" name="smartfolio_experience_design_and_aesthetics" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_design_and_aesthetics_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics1', 'Very Satisfied')" id="smartfolio_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="smartfolio_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics3', 'Neutral')" id="smartfolio_experience_design_and_aesthetics3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="smartfolio_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_design_and_aesthetics','smartfolio_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="smartfolio_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="smartfolio_experience_design_and_aesthetics_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_design_and_aesthetics_parent_star','smartfolio_experience_design_and_aesthetics',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_design_and_aesthetics_parent_star','smartfolio_experience_design_and_aesthetics',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_design_and_aesthetics_parent_star','smartfolio_experience_design_and_aesthetics',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_design_and_aesthetics_parent_star','smartfolio_experience_design_and_aesthetics',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_design_and_aesthetics_parent_star','smartfolio_experience_design_and_aesthetics',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_design_and_aesthetics" name="smartfolio_experience_design_and_aesthetics" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Security</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_security" name="smartfolio_experience_security" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_security_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security1', 'Very Satisfied')" id="smartfolio_experience_security1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security2', 'Somewhat Satisfied')" id="smartfolio_experience_security2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security3', 'Neutral')" id="smartfolio_experience_security3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security4', 'Somewhat Dissatisfied')" id="smartfolio_experience_security4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_security','smartfolio_experience_security5', 'Very Dissatisfied')" id="smartfolio_experience_security5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="smartfolio_experience_security_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_security_parent_star','smartfolio_experience_security',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_security_parent_star','smartfolio_experience_security',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_security_parent_star','smartfolio_experience_security',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_security_parent_star','smartfolio_experience_security',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_security_parent_star','smartfolio_experience_security',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_security" name="smartfolio_experience_security" value="">
                                         </div>
                                    </li>
                                    <li>
-                                        <label class="labelstrong">Push Notifications</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_push_notifications" name="smartfolio_experience_push_notifications" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_push_notifications_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications1', 'Very Satisfied')" id="smartfolio_experience_push_notifications1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications2', 'Somewhat Satisfied')" id="smartfolio_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications3', 'Neutral')" id="smartfolio_experience_push_notifications3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications4', 'Somewhat Dissatisfied')" id="smartfolio_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_push_notifications','smartfolio_experience_push_notifications5', 'Very Dissatisfied')" id="smartfolio_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Notifications</label>
+                                        <div class="formGroup" id="smartfolio_experience_push_notifications_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_push_notifications_parent_star','smartfolio_experience_push_notifications',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_push_notifications_parent_star','smartfolio_experience_push_notifications',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_push_notifications_parent_star','smartfolio_experience_push_notifications',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_push_notifications_parent_star','smartfolio_experience_push_notifications',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_push_notifications_parent_star','smartfolio_experience_push_notifications',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_push_notifications" name="smartfolio_experience_push_notifications" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">App Speed</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="smartfolio_experience_app_speed" name="smartfolio_experience_app_speed" value="">
-                                                  <div class="ratingexperience" id="smartfolio_experience_app_speed_parent">
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed1', 'Very Satisfied')" id="smartfolio_experience_app_speed1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed2', 'Somewhat Satisfied')" id="smartfolio_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed3', 'Neutral')" id="smartfolio_experience_app_speed3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed4', 'Somewhat Dissatisfied')" id="smartfolio_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('smartfolio_experience_app_speed','smartfolio_experience_app_speed5', 'Very Dissatisfied')" id="smartfolio_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="smartfolio_experience_app_speed_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('smartfolio_experience_app_speed_parent_star','smartfolio_experience_app_speed',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_app_speed_parent_star','smartfolio_experience_app_speed',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_app_speed_parent_star','smartfolio_experience_app_speed',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_app_speed_parent_star','smartfolio_experience_app_speed',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('smartfolio_experience_app_speed_parent_star','smartfolio_experience_app_speed',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="smartfolio_experience_app_speed" name="smartfolio_experience_app_speed" value="">
                                         </div>
                                    </li>
                               </ol>
@@ -1265,128 +1376,149 @@
                               <ol type="a" id="mutual_fund_recommendations_experience">
                                    <li>
                                         <label class="labelstrong">Ease of Use</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_ease_of_use" name="mutual_fund_recommendations_experience_ease_of_use" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_ease_of_use_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_ease_of_use1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_ease_of_use2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use3', 'Neutral')" id="mutual_fund_recommendations_experience_ease_of_use3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_ease_of_use4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_ease_of_use','mutual_fund_recommendations_experience_ease_of_use5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_ease_of_use5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_ease_of_use_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_ease_of_use_parent_star','mutual_fund_recommendations_experience_ease_of_use',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_ease_of_use_parent_star','mutual_fund_recommendations_experience_ease_of_use',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_ease_of_use_parent_star','mutual_fund_recommendations_experience_ease_of_use',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_ease_of_use_parent_star','mutual_fund_recommendations_experience_ease_of_use',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_ease_of_use_parent_star','mutual_fund_recommendations_experience_ease_of_use',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_ease_of_use" name="mutual_fund_recommendations_experience_ease_of_use" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Functionality</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_functionality" name="mutual_fund_recommendations_experience_functionality" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_functionality_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_functionality1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_functionality2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality3', 'Neutral')" id="mutual_fund_recommendations_experience_functionality3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_functionality4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_functionality','mutual_fund_recommendations_experience_functionality5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_functionality5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_functionality_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_functionality_parent_star','mutual_fund_recommendations_experience_functionality',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_functionality_parent_star','mutual_fund_recommendations_experience_functionality',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_functionality_parent_star','mutual_fund_recommendations_experience_functionality',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_functionality_parent_star','mutual_fund_recommendations_experience_functionality',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_functionality_parent_star','mutual_fund_recommendations_experience_functionality',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_functionality" name="mutual_fund_recommendations_experience_functionality" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Performance</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_performance" name="mutual_fund_recommendations_experience_performance" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_performance_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_performance1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_performance2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance3', 'Neutral')" id="mutual_fund_recommendations_experience_performance3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_performance4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_performance','mutual_fund_recommendations_experience_performance5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_performance5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_performance_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_performance_parent_star','mutual_fund_recommendations_experience_performance',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_performance_parent_star','mutual_fund_recommendations_experience_performance',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_performance_parent_star','mutual_fund_recommendations_experience_performance',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_performance_parent_star','mutual_fund_recommendations_experience_performance',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_performance_parent_star','mutual_fund_recommendations_experience_performance',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_performance" name="mutual_fund_recommendations_experience_performance" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Design and Aesthetics</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_design_and_aesthetics" name="mutual_fund_recommendations_experience_design_and_aesthetics" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_design_and_aesthetics_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics3', 'Neutral')" id="mutual_fund_recommendations_experience_design_and_aesthetics3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_design_and_aesthetics','mutual_fund_recommendations_experience_design_and_aesthetics5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_design_and_aesthetics5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_design_and_aesthetics_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_design_and_aesthetics_parent_star','mutual_fund_recommendations_experience_design_and_aesthetics',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_design_and_aesthetics_parent_star','mutual_fund_recommendations_experience_design_and_aesthetics',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_design_and_aesthetics_parent_star','mutual_fund_recommendations_experience_design_and_aesthetics',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_design_and_aesthetics_parent_star','mutual_fund_recommendations_experience_design_and_aesthetics',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_design_and_aesthetics_parent_star','mutual_fund_recommendations_experience_design_and_aesthetics',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_design_and_aesthetics" name="mutual_fund_recommendations_experience_design_and_aesthetics" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">Security</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_security" name="mutual_fund_recommendations_experience_security" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_security_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_security1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_security2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security3', 'Neutral')" id="mutual_fund_recommendations_experience_security3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_security4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_security','mutual_fund_recommendations_experience_security5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_security5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_security_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_security_parent_star','mutual_fund_recommendations_experience_security',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_security_parent_star','mutual_fund_recommendations_experience_security',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_security_parent_star','mutual_fund_recommendations_experience_security',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_security_parent_star','mutual_fund_recommendations_experience_security',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_security_parent_star','mutual_fund_recommendations_experience_security',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_security" name="mutual_fund_recommendations_experience_security" value="">
                                         </div>
                                    </li>
                                    <li>
-                                        <label class="labelstrong">Push Notifications</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_push_notifications" name="mutual_fund_recommendations_experience_push_notifications" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_push_notifications_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_push_notifications1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_push_notifications2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications3', 'Neutral')" id="mutual_fund_recommendations_experience_push_notifications3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_push_notifications4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_push_notifications','mutual_fund_recommendations_experience_push_notifications5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_push_notifications5" class="very_dissatisfied_disabled"></span>
+                                        <label class="labelstrong">Notifications</label>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_push_notifications_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_push_notifications_parent_star','mutual_fund_recommendations_experience_push_notifications',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_push_notifications_parent_star','mutual_fund_recommendations_experience_push_notifications',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_push_notifications_parent_star','mutual_fund_recommendations_experience_push_notifications',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_push_notifications_parent_star','mutual_fund_recommendations_experience_push_notifications',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_push_notifications_parent_star','mutual_fund_recommendations_experience_push_notifications',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_push_notifications" name="mutual_fund_recommendations_experience_push_notifications" value="">
                                         </div>
                                    </li>
                                    <li>
                                         <label class="labelstrong">App Speed</label>
-                                        <div class="formGroup">
-                                             <p>
-                                                  <input type="hidden" id="mutual_fund_recommendations_experience_app_speed" name="mutual_fund_recommendations_experience_app_speed" value="">
-                                                  <div class="ratingexperience" id="mutual_fund_recommendations_experience_app_speed_parent">
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed1', 'Very Satisfied')" id="mutual_fund_recommendations_experience_app_speed1" class="verysatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed2', 'Somewhat Satisfied')" id="mutual_fund_recommendations_experience_app_speed2" class="somewhat_satisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed3', 'Neutral')" id="mutual_fund_recommendations_experience_app_speed3" class="neutral_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed4', 'Somewhat Dissatisfied')" id="mutual_fund_recommendations_experience_app_speed4" class="somewhat_dissatisfied_disabled"></span>
-                                                       <span onclick="selectExperienceRating('mutual_fund_recommendations_experience_app_speed','mutual_fund_recommendations_experience_app_speed5', 'Very Dissatisfied')" id="mutual_fund_recommendations_experience_app_speed5" class="very_dissatisfied_disabled"></span>
+                                        <div class="formGroup" id="mutual_fund_recommendations_experience_app_speed_parent_star">
+                                             <div class="starContainer">
+                                                  <div class="stars">
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_app_speed_parent_star','mutual_fund_recommendations_experience_app_speed',1)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_app_speed_parent_star','mutual_fund_recommendations_experience_app_speed',2)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_app_speed_parent_star','mutual_fund_recommendations_experience_app_speed',3)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_app_speed_parent_star','mutual_fund_recommendations_experience_app_speed',4)" class="star">★
+                                                       </span>
+                                                       <span onclick="starRating('mutual_fund_recommendations_experience_app_speed_parent_star','mutual_fund_recommendations_experience_app_speed',5)" class="star">★
+                                                       </span>
                                                   </div>
-                                             </p>
-                                        </div>
-                                        <div class="ratingExperienceFooter">
-                                             <span class="value">&nbsp;</span>
+                                                  <div class="starrating"></div>
+                                             </div>
+                                             <input type="hidden" id="mutual_fund_recommendations_experience_app_speed" name="mutual_fund_recommendations_experience_app_speed" value="">
                                         </div>
                                    </li>
                               </ol>
@@ -1401,102 +1533,34 @@
                     } 
                }
           }
-          function selectExperienceRating(formField, selectedItem, value) {
-               const parentDiv = document.getElementById(formField+'_parent');
-               const childSpans = parentDiv.querySelectorAll("span");
-               var element = document.getElementById(selectedItem);
-               var parent_li = parentDiv.closest("li");
-               if(value == 'Very Satisfied') {
-                    if (element.classList.contains("verysatisfied_disabled")) {
-                         element.classList.remove("verysatisfied_disabled");
-                         element.classList.add("verysatisfied_enabled");
-                         document.getElementById(formField).value = value;
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Very Satisfied';
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:0px");
-                    } else {
-                         document.getElementById(formField).value = '';
-                    }
-                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
-               } else if(value == 'Somewhat Satisfied') {
-                    if (element.classList.contains("somewhat_satisfied_disabled")) {
-                         element.classList.remove("somewhat_satisfied_disabled");
-                         element.classList.add("somewhat_satisfied_enabled");
-                         document.getElementById(formField).value = value;
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Somewhat Satisfied';
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:32px");
-                    } else {
-                         document.getElementById(formField).value = '';
-                    }
-                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
-               } else if(value == 'Neutral') {
-                    if (element.classList.contains("neutral_disabled")) {
-                         element.classList.remove("neutral_disabled");
-                         element.classList.add("neutral_enabled");
-                         document.getElementById(formField).value = value;
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Neutral';
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:128px");
-                    } else {
-                         document.getElementById(formField).value = '';
-                    }
-                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
-               } else if(value == 'Somewhat Dissatisfied') {
-                    if (element.classList.contains("somewhat_dissatisfied_disabled")) {
-                         element.classList.remove("somewhat_dissatisfied_disabled");
-                         element.classList.add("somewhat_dissatisfied_enabled");
-                         document.getElementById(formField).value = value;
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Somewhat Dissatisfied';
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","left:158px");
-                    } else {
-                         document.getElementById(formField).value = '';
-                    }
-                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.remove("very_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
-                    parentDiv.querySelector('#'+formField+'5').classList.add("very_dissatisfied_disabled");
-               } else if(value == 'Very Dissatisfied') {
-                    if (element.classList.contains("very_dissatisfied_disabled")) {
-                         element.classList.remove("very_dissatisfied_disabled");
-                         element.classList.add("very_dissatisfied_enabled");
-                         document.getElementById(formField).value = value;
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').textContent = 'Very Dissatisfied';
-                         parent_li.querySelector('.ratingExperienceFooter').querySelector('.value').setAttribute("style","right:0px");
-
-                    } else {
-                         document.getElementById(formField).value = '';
-                    }
-                    parentDiv.querySelector('#'+formField+'1').classList.remove("verysatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.remove("somewhat_satisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.remove("neutral_enabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.remove("somewhat_dissatisfied_enabled");
-                    parentDiv.querySelector('#'+formField+'1').classList.add("verysatisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'2').classList.add("somewhat_satisfied_disabled");
-                    parentDiv.querySelector('#'+formField+'3').classList.add("neutral_disabled");
-                    parentDiv.querySelector('#'+formField+'4').classList.add("somewhat_dissatisfied_disabled");
+          function starRating(parent, control, n) {
+               let stars = document.getElementById(parent).getElementsByClassName("star");
+               removeStars(parent);
+               for (let i = 0; i < n; i++) {
+                    stars[i].className = "star starcolor";
+               }
+               let rating;
+               if (n==1) {
+                    rating = 'Very Dissatisfied';
+               } else if (n==2) {
+                    rating = 'Dissatisfied';
+               } else if (n==3) {
+                    rating = 'Neutral';
+               } else if (n==4) {
+                    rating = 'Satisfied';
+               } else if (n==5) {
+                    rating = 'Very Satisfied';
+               }
+               document.getElementById(control).value = rating;
+               var outPut = document.getElementById(parent).getElementsByClassName("starrating")[0];
+               outPut.textContent = rating;
+          }
+          function removeStars(parent) {
+               let stars = document.getElementById(parent).getElementsByClassName("star");
+               let i = 0;
+               while (i < 5) {
+                    stars[i].className = "star";
+                    i++;
                }
           }
           const form = document.querySelector('#survey');
@@ -1602,7 +1666,7 @@
                formData.append('smartfolio_recommendations_experience', document.forms["survey"]["smartfolio_recommendations_experience"].value);
                formData.append('mutual_fund_recommendations_experience', document.forms["survey"]["mutual_fund_recommendations_experience"].value);
                formData.append('pms_experience', document.forms["survey"]["pms_experience"].value);
-               if(document.forms["survey"]["fundamental_research_recommendations_experience"].value && document.forms["survey"]["fundamental_research_recommendations_experience"].value != '') {
+               if((document.forms["survey"]["fundamental_research_recommendations_experience"].value && document.forms["survey"]["fundamental_research_recommendations_experience"].value != '') || (document.forms["survey"]["technical_research_recommendations_experience"].value && document.forms["survey"]["technical_research_recommendations_experience"].value != '') || (document.forms["survey"]["smartfolio_recommendations_experience"].value && document.forms["survey"]["smartfolio_recommendations_experience"].value != '')) {
                     const index = $('#flip_mobile_experience_container').index();
                     if(document.forms["survey"]["flip_mobile_experience_ease_of_use"].value && document.forms["survey"]["flip_mobile_experience_ease_of_use"].value != '') {
                          formData.append('flip_mobile_experience_ease_of_use', document.forms["survey"]["flip_mobile_experience_ease_of_use"].value);
@@ -1659,9 +1723,9 @@
                     } else {
                          valid = false;
                          if(msg == '') {
-                              msg = (index+1) + '.f. Push Notifications is required';
+                              msg = (index+1) + '.f. Notifications is required';
                          } else {
-                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                              msg = msg + '\n'+(index+1)  + '.f. Notifications is required';
                          }
                     }
                     if(document.forms["survey"]["flip_mobile_experience_app_speed"].value && document.forms["survey"]["flip_mobile_experience_app_speed"].value != '') {
@@ -1677,76 +1741,13 @@
                }
                if(document.forms["survey"]["technical_research_recommendations_experience"].value && document.forms["survey"]["technical_research_recommendations_experience"].value != '') {
                     const index = $('#traderx_container').index();
-                    if(document.forms["survey"]["traderx_experience_ease_of_use"].value && document.forms["survey"]["traderx_experience_ease_of_use"].value != '') {
-                         formData.append('traderx_experience_ease_of_use', document.forms["survey"]["traderx_experience_ease_of_use"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.a. Ease of Use is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.a. Ease of Use is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_functionality"].value && document.forms["survey"]["traderx_experience_functionality"].value != '') {
-                         formData.append('traderx_experience_functionality', document.forms["survey"]["traderx_experience_functionality"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.b. Functionality is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.b. Functionality is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_performance"].value && document.forms["survey"]["traderx_experience_performance"].value != '') {
-                         formData.append('traderx_experience_performance', document.forms["survey"]["traderx_experience_performance"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.c. Performance is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.c. Performance is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_design_and_aesthetics"].value && document.forms["survey"]["traderx_experience_design_and_aesthetics"].value != '') {
-                         formData.append('traderx_experience_design_and_aesthetics', document.forms["survey"]["traderx_experience_design_and_aesthetics"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.d. Design and Aesthetics is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.d. Design and Aesthetics is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_security"].value && document.forms["survey"]["traderx_experience_security"].value != '') {
-                         formData.append('traderx_experience_security', document.forms["survey"]["traderx_experience_security"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.e. Security is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.e. Security is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_push_notifications"].value && document.forms["survey"]["traderx_experience_push_notifications"].value != '') {
-                         formData.append('traderx_experience_push_notifications', document.forms["survey"]["traderx_experience_push_notifications"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.f. Push Notifications is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
-                         }
-                    }
-                    if(document.forms["survey"]["traderx_experience_app_speed"].value && document.forms["survey"]["traderx_experience_app_speed"].value != '') {
-                         formData.append('traderx_experience_app_speed', document.forms["survey"]["traderx_experience_app_speed"].value);
-                    } else {
-                         valid = false;
-                         if(msg == '') {
-                              msg = (index+1) + '.g. App Speed is required';
-                         } else {
-                              msg = msg + '\n'+(index+1)  + '.g. App Speed is required';
-                         }
-                    }
+                    formData.append('traderx_experience_ease_of_use', document.forms["survey"]["traderx_experience_ease_of_use"].value);
+                    formData.append('traderx_experience_functionality', document.forms["survey"]["traderx_experience_functionality"].value);
+                    formData.append('traderx_experience_performance', document.forms["survey"]["traderx_experience_performance"].value);
+                    formData.append('traderx_experience_design_and_aesthetics', document.forms["survey"]["traderx_experience_design_and_aesthetics"].value);
+                    formData.append('traderx_experience_security', document.forms["survey"]["traderx_experience_security"].value);
+                    formData.append('traderx_experience_push_notifications', document.forms["survey"]["traderx_experience_push_notifications"].value);
+                    formData.append('traderx_experience_app_speed', document.forms["survey"]["traderx_experience_app_speed"].value);
                }
                if(document.forms["survey"]["smartfolio_recommendations_experience"].value && document.forms["survey"]["smartfolio_recommendations_experience"].value != '') {
                     const index = $('#smartfolio_container').index();
@@ -1805,9 +1806,9 @@
                     } else {
                          valid = false;
                          if(msg == '') {
-                              msg = (index+1) + '.f. Push Notifications is required';
+                              msg = (index+1) + '.f. Notifications is required';
                          } else {
-                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                              msg = msg + '\n'+(index+1)  + '.f. Notifications is required';
                          }
                     }
                     if(document.forms["survey"]["smartfolio_experience_app_speed"].value && document.forms["survey"]["smartfolio_experience_app_speed"].value != '') {
@@ -1878,9 +1879,9 @@
                     } else {
                          valid = false;
                          if(msg == '') {
-                              msg = (index+1) + '.f. Push Notifications is required';
+                              msg = (index+1) + '.f. Notifications is required';
                          } else {
-                              msg = msg + '\n'+(index+1)  + '.f. Push Notifications is required';
+                              msg = msg + '\n'+(index+1)  + '.f. Notifications is required';
                          }
                     }
                     if(document.forms["survey"]["mutual_fund_recommendations_experience_app_speed"].value && document.forms["survey"]["mutual_fund_recommendations_experience_app_speed"].value != '') {
@@ -1903,7 +1904,6 @@
 	          for (let keyValue of formData.entries()) {
 		          data[keyValue[0]] = keyValue[1];
 	          }
-	          console.log(data);
           }
           form.addEventListener(`submit`, validateForm);
      </script>
